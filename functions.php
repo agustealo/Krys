@@ -49,11 +49,8 @@ function marcia_register_pattern_categories() {
 		'marcia-pricing'      => __( 'Pricing', 'marcia' ),
 		'marcia-blog'         => __( 'Blog', 'marcia' ),
 		'marcia-shop'         => __( 'Shop', 'marcia' ),
-		'marcia-team'         => __( 'Team', 'marcia' ),
 		'marcia-cta'          => __( 'Call to Action', 'marcia' ),
-		'marcia-content'      => __( 'Content', 'marcia' ),
 		'marcia-contact'      => __( 'Contact', 'marcia' ),
-		'marcia-gallery'      => __( 'Gallery', 'marcia' ),
 		'marcia-stats'        => __( 'Statistics', 'marcia' ),
 	);
 
