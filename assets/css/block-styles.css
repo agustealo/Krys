@@ -1,0 +1,33 @@
+/**
+ * Shared Marcia block style variations.
+ */
+
+.is-style-marcia-checkmarks {
+	list-style: none;
+	padding-inline-start: 0;
+}
+
+.is-style-marcia-checkmarks li {
+	position: relative;
+	padding-inline-start: 1.6em;
+}
+
+.is-style-marcia-checkmarks li::before {
+	content: "✓";
+	position: absolute;
+	inset-inline-start: 0;
+	color: var(--wp--preset--color--success);
+	font-weight: 700;
+}
+
+.is-style-marcia-card {
+	border: 1px solid var(--wp--preset--color--gray-200);
+	border-radius: 0.5rem;
+	padding: var(--wp--preset--spacing--50);
+}
+
+.is-style-marcia-shadow {
+	border-radius: 0.5rem;
+	box-shadow: var(--wp--preset--shadow--natural);
+	padding: var(--wp--preset--spacing--50);
+}
