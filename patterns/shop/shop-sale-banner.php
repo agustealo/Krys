@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Sale Banner
- * Slug: marcia/shop-sale-banner
- * Categories: marcia-shop
+ * Slug: krys/shop-sale-banner
+ * Categories: krys-shop
  * Description: Eye-catching sale promotion banner
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -16,21 +16,21 @@
 		<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
 			<!-- wp:heading {"level":2,"fontSize":"xx-large"} -->
-			<h2 class="wp-block-heading has-xx-large-font-size"><?php esc_html_e( 'Spring Sale', 'marcia' ); ?></h2>
+			<h2 class="wp-block-heading has-xx-large-font-size"><?php esc_html_e( 'Spring Sale', 'krys' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:heading {"level":3,"fontSize":"x-large","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-			<h3 class="wp-block-heading has-x-large-font-size" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'Up to 50% Off', 'marcia' ); ?></h3>
+			<h3 class="wp-block-heading has-x-large-font-size" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'Up to 50% Off', 'krys' ); ?></h3>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"fontSize":"large","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-			<p class="has-large-font-size" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'Limited time offer on selected items. Free shipping on all orders.', 'marcia' ); ?></p>
+			<p class="has-large-font-size" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'Limited time offer on selected items. Free shipping on all orders.', 'krys' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 			<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 				<!-- wp:button {"backgroundColor":"base","textColor":"contrast"} -->
-				<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button" href="/shop?filter=sale"><?php esc_html_e( 'Shop Sale', 'marcia' ); ?></a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button" href="/shop?filter=sale"><?php esc_html_e( 'Shop Sale', 'krys' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
@@ -46,7 +46,7 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"large"} -->
-				<p class="has-text-align-center has-large-font-size"><?php esc_html_e( 'OFF', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-large-font-size"><?php esc_html_e( 'OFF', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

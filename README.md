@@ -1,4 +1,4 @@
-# Marcia Theme 2025
+# Krys Theme 2025
 
 A next-generation WordPress block theme built for performance, flexibility, and modern web standards.
 
@@ -9,7 +9,7 @@ A next-generation WordPress block theme built for performance, flexibility, and 
 
 ## Overview
 
-Marcia is a 100% block-native WordPress theme designed with Full Site Editing (FSE), offering unprecedented flexibility and performance. Built for 2025 web standards with Core Web Vitals optimization, accessibility compliance, and a comprehensive design system.
+Krys is a 100% block-native WordPress theme designed with Full Site Editing (FSE), offering unprecedented flexibility and performance. Built for 2025 web standards with Core Web Vitals optimization, accessibility compliance, and a comprehensive design system.
 
 ### Key Features
 
@@ -44,8 +44,8 @@ Marcia is a 100% block-native WordPress theme designed with Full Site Editing (F
 
 ```bash
 cd wp-content/themes/
-git clone https://github.com/Zeus-Eternal/Krys.git marcia
-cd marcia
+git clone https://github.com/agustealo/Krys.git krys
+cd krys
 npm install
 npm run build
 ```
@@ -62,7 +62,7 @@ npm run build
 ### File Structure
 
 ```
-marcia/
+krys/
 ├── assets/              # Theme assets
 │   ├── css/            # Stylesheets
 │   │   ├── base.css    # Base styles
@@ -296,8 +296,8 @@ php -v   # 8.0+
 
 ```bash
 # Clone repository
-git clone https://github.com/Zeus-Eternal/Krys.git marcia
-cd marcia
+git clone https://github.com/agustealo/Krys.git krys
+cd krys
 
 # Install dependencies
 npm install
@@ -391,10 +391,10 @@ Edit `theme.json`:
 
 ```bash
 # Generate POT file
-wp i18n make-pot . languages/marcia.pot
+wp i18n make-pot . languages/krys.pot
 
 # Create translation
-msgfmt languages/marcia-es_ES.po -o languages/marcia-es_ES.mo
+msgfmt languages/krys-es_ES.po -o languages/krys-es_ES.mo
 ```
 
 ### Available Languages
@@ -427,8 +427,8 @@ msgfmt languages/marcia-es_ES.po -o languages/marcia-es_ES.mo
 ## Support & Documentation
 
 - **Documentation**: [docs/](docs/)
-- **WordPress Forum**: [wordpress.org/support/theme/marcia](https://wordpress.org/support/theme/marcia)
-- **GitHub Issues**: [github.com/Zeus-Eternal/Krys/issues](https://github.com/Zeus-Eternal/Krys/issues)
+- **WordPress Forum**: [wordpress.org/support/theme/krys](https://wordpress.org/support/theme/krys)
+- **GitHub Issues**: [github.com/agustealo/Krys/issues](https://github.com/agustealo/Krys/issues)
 - **Contributing**: See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Changelog
@@ -461,7 +461,7 @@ See [CHANGELOG.md](CHANGELOG.md) for complete history.
 
 ## License
 
-Marcia Theme is licensed under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
+Krys Theme is licensed under the [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html).
 
 ### Third-Party Resources
 
@@ -471,7 +471,7 @@ Marcia Theme is licensed under the [GPLv2 or later](https://www.gnu.org/licenses
 
 ## Credits
 
-Developed by the Marcia Theme team.
+Developed by the Krys Theme team.
 
 Special thanks to:
 - WordPress Block Editor team

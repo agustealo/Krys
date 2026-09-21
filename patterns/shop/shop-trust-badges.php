@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Shop Trust Badges
- * Slug: marcia/shop-trust-badges
- * Categories: marcia-shop
+ * Slug: krys/shop-trust-badges
+ * Categories: krys-shop
  * Description: Trust badges and guarantees for e-commerce credibility
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -22,11 +22,11 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:heading {"textAlign":"center","level":4,"fontSize":"medium"} -->
-				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( 'Free Shipping', 'marcia' ); ?></h4>
+				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( 'Free Shipping', 'krys' ); ?></h4>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'On orders over $50', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'On orders over $50', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -42,11 +42,11 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:heading {"textAlign":"center","level":4,"fontSize":"medium"} -->
-				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( 'Secure Payment', 'marcia' ); ?></h4>
+				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( 'Secure Payment', 'krys' ); ?></h4>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'SSL encrypted checkout', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'SSL encrypted checkout', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -62,11 +62,11 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:heading {"textAlign":"center","level":4,"fontSize":"medium"} -->
-				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( '30-Day Returns', 'marcia' ); ?></h4>
+				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( '30-Day Returns', 'krys' ); ?></h4>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'Money-back guarantee', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'Money-back guarantee', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -82,11 +82,11 @@
 				<!-- /wp:heading -->
 
 				<!-- wp:heading {"textAlign":"center","level":4,"fontSize":"medium"} -->
-				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( '24/7 Support', 'marcia' ); ?></h4>
+				<h4 class="wp-block-heading has-text-align-center has-medium-font-size"><?php esc_html_e( '24/7 Support', 'krys' ); ?></h4>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'Customer service', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'Customer service', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

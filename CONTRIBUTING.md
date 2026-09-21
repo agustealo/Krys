@@ -1,6 +1,6 @@
-# Contributing to Marcia Theme
+# Contributing to Krys Theme
 
-Thank you for your interest in contributing to Marcia! We welcome contributions from the community.
+Thank you for your interest in contributing to Krys! We welcome contributions from the community.
 
 ## Table of Contents
 
@@ -85,7 +85,7 @@ We welcome various types of contributions:
 - Follow [WordPress PHP Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/php/)
 - Use tabs for indentation
 - Document all functions with PHPDoc
-- Prefix all function names with `marcia_`
+- Prefix all function names with `krys_`
 
 ### CSS
 
@@ -223,7 +223,7 @@ If applicable, add screenshots.
 
 **Environment:**
 - WordPress version:
-- Marcia version:
+- Krys version:
 - Browser:
 - Device:
 
@@ -273,11 +273,11 @@ Mockups, examples, etc.
 <?php
 /**
  * Title: Pattern Name
- * Slug: marcia/pattern-slug
- * Categories: marcia-category
+ * Slug: krys/pattern-slug
+ * Categories: krys-category
  * Description: Brief description of the pattern
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -288,9 +288,9 @@ Mockups, examples, etc.
 
 If you have questions:
 
-- Open a [GitHub Discussion](https://github.com/Zeus-Eternal/Krys/discussions)
-- Visit [WordPress.org Support Forum](https://wordpress.org/support/theme/marcia)
-- Check the [documentation](https://github.com/Zeus-Eternal/Krys/wiki)
+- Open a [GitHub Discussion](https://github.com/agustealo/Krys/discussions)
+- Visit [WordPress.org Support Forum](https://wordpress.org/support/theme/krys)
+- Check the [documentation](https://github.com/agustealo/Krys/wiki)
 
 ## License
 
@@ -298,4 +298,4 @@ By contributing, you agree that your contributions will be licensed under the GP
 
 ---
 
-Thank you for contributing to Marcia! 🎉
+Thank you for contributing to Krys! 🎉

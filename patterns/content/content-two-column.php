@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Two Column Content
- * Slug: marcia/content-two-column
- * Categories: marcia-content
+ * Slug: krys/content-two-column
+ * Categories: krys-content
  * Description: Split layout with image and text content side by side
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -24,34 +24,34 @@
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
 			<!-- wp:paragraph {"fontSize":"small","textColor":"primary"} -->
-			<p class="has-primary-color has-text-color has-small-font-size"><?php esc_html_e( 'FEATURE', 'marcia' ); ?></p>
+			<p class="has-primary-color has-text-color has-small-font-size"><?php esc_html_e( 'FEATURE', 'krys' ); ?></p>
 			<!-- /wp:paragraph -->
 
 			<!-- wp:heading {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-			<h2 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Powerful Features for Modern Teams', 'marcia' ); ?></h2>
+			<h2 class="wp-block-heading" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Powerful Features for Modern Teams', 'krys' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"large"} -->
-			<p class="has-large-font-size" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Our platform provides everything you need to collaborate effectively, manage projects efficiently, and deliver exceptional results.', 'marcia' ); ?></p>
+			<p class="has-large-font-size" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Our platform provides everything you need to collaborate effectively, manage projects efficiently, and deliver exceptional results.', 'krys' ); ?></p>
 			<!-- /wp:paragraph -->
 
-			<!-- wp:list {"className":"is-style-marcia-checkmarks","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-			<ul class="is-style-marcia-checkmarks" style="margin-top:var(--wp--preset--spacing--40)">
-				<li><?php esc_html_e( 'Real-time collaboration tools', 'marcia' ); ?></li>
-				<li><?php esc_html_e( 'Advanced analytics and reporting', 'marcia' ); ?></li>
-				<li><?php esc_html_e( 'Seamless integrations', 'marcia' ); ?></li>
-				<li><?php esc_html_e( 'Enterprise-grade security', 'marcia' ); ?></li>
+			<!-- wp:list {"className":"is-style-krys-checkmarks","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
+			<ul class="is-style-krys-checkmarks" style="margin-top:var(--wp--preset--spacing--40)">
+				<li><?php esc_html_e( 'Real-time collaboration tools', 'krys' ); ?></li>
+				<li><?php esc_html_e( 'Advanced analytics and reporting', 'krys' ); ?></li>
+				<li><?php esc_html_e( 'Seamless integrations', 'krys' ); ?></li>
+				<li><?php esc_html_e( 'Enterprise-grade security', 'krys' ); ?></li>
 			</ul>
 			<!-- /wp:list -->
 
 			<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
 			<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--50)">
 				<!-- wp:button -->
-				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Learn More', 'marcia' ); ?></a></div>
+				<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Learn More', 'krys' ); ?></a></div>
 				<!-- /wp:button -->
 
 				<!-- wp:button {"className":"is-style-outline"} -->
-				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Watch Demo', 'marcia' ); ?></a></div>
+				<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Watch Demo', 'krys' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->

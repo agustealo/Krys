@@ -54,7 +54,7 @@ Compliance checklist for WordPress.org theme repository submission.
 - [x] No PHP errors or warnings
 - [x] No JavaScript console errors
 - [x] WordPress Coding Standards compliance
-- [x] Properly prefixed function names (`marcia_`)
+- [x] Properly prefixed function names (`krys_`)
 - [x] Properly prefixed class names
 - [x] No hardcoded styles (use theme.json)
 - [x] Semantic HTML5 markup
@@ -107,7 +107,7 @@ Compliance checklist for WordPress.org theme repository submission.
 
 ### Internationalization
 - [x] All strings translatable
-- [x] Text domain 'marcia' used consistently
+- [x] Text domain 'krys' used consistently
 - [x] Text domain matches theme slug
 - [x] Domain path set in style.css header
 - [x] Ready for translation
@@ -156,7 +156,7 @@ Compliance checklist for WordPress.org theme repository submission.
 ## WordPress.org Specific
 
 ### Theme Slug
-- [x] Unique theme slug: `marcia`
+- [x] Unique theme slug: `krys`
 - [x] Matches text domain
 - [x] No trademark conflicts
 - [x] Available on WordPress.org
@@ -209,7 +209,7 @@ Maximum 5 tags in README.txt:
 ### Package
 - [ ] Create clean distribution ZIP
 - [ ] ZIP contains only necessary files
-- [ ] ZIP file named correctly (marcia.zip)
+- [ ] ZIP file named correctly (krys.zip)
 - [ ] Test ZIP installation
 - [ ] Verify file structure in ZIP
 
@@ -252,7 +252,7 @@ npm run build
 npm run zip
 
 # Or manually:
-zip -r marcia.zip . \
+zip -r krys.zip . \
   -x "*.git*" \
   -x "*node_modules*" \
   -x "*.DS_Store" \
@@ -263,7 +263,7 @@ zip -r marcia.zip . \
 ### 3. WordPress.org Upload
 1. Visit https://wordpress.org/themes/upload/
 2. Login to WordPress.org account
-3. Upload marcia.zip
+3. Upload krys.zip
 4. Fill out theme information
 5. Submit for review
 

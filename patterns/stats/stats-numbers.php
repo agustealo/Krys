@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Stats Numbers
- * Slug: marcia/stats-numbers
- * Categories: marcia-stats
+ * Slug: krys/stats-numbers
+ * Categories: krys-stats
  * Description: Statistics section with large numbers and labels
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -18,11 +18,11 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"textAlign":"center","fontSize":"xxx-large"} -->
-				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '50,000+', 'marcia' ); ?></h2>
+				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '50,000+', 'krys' ); ?></h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
-				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Active Users', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Active Users', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -34,11 +34,11 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"textAlign":"center","fontSize":"xxx-large"} -->
-				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '99.9%', 'marcia' ); ?></h2>
+				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '99.9%', 'krys' ); ?></h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
-				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Uptime Guaranteed', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Uptime Guaranteed', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -50,11 +50,11 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"textAlign":"center","fontSize":"xxx-large"} -->
-				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '150+', 'marcia' ); ?></h2>
+				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '150+', 'krys' ); ?></h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
-				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Countries Worldwide', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Countries Worldwide', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->
@@ -66,11 +66,11 @@
 			<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","orientation":"vertical","justifyContent":"center"}} -->
 			<div class="wp-block-group">
 				<!-- wp:heading {"textAlign":"center","fontSize":"xxx-large"} -->
-				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '24/7', 'marcia' ); ?></h2>
+				<h2 class="wp-block-heading has-text-align-center has-xxx-large-font-size"><?php esc_html_e( '24/7', 'krys' ); ?></h2>
 				<!-- /wp:heading -->
 
 				<!-- wp:paragraph {"align":"center","fontSize":"medium"} -->
-				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Customer Support', 'marcia' ); ?></p>
+				<p class="has-text-align-center has-medium-font-size"><?php esc_html_e( 'Customer Support', 'krys' ); ?></p>
 				<!-- /wp:paragraph -->
 			</div>
 			<!-- /wp:group -->

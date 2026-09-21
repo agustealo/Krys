@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Hero with Video Background
- * Slug: marcia/hero-video
- * Categories: marcia-hero
+ * Slug: krys/hero-video
+ * Categories: krys-hero
  * Description: Full-width hero with video background and overlay
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -14,21 +14,21 @@
 	<!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
 	<div class="wp-block-group">
 		<!-- wp:heading {"textAlign":"center","level":1,"textColor":"base","fontSize":"xxx-large"} -->
-		<h1 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size"><?php esc_html_e( 'Experience the Future', 'marcia' ); ?></h1>
+		<h1 class="wp-block-heading has-text-align-center has-base-color has-text-color has-xxx-large-font-size"><?php esc_html_e( 'Experience the Future', 'krys' ); ?></h1>
 		<!-- /wp:heading -->
 
 		<!-- wp:paragraph {"align":"center","textColor":"base","fontSize":"large","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
-		<p class="has-text-align-center has-base-color has-text-color has-large-font-size" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Join thousands of teams already using our platform to build, ship, and scale their products faster than ever before.', 'marcia' ); ?></p>
+		<p class="has-text-align-center has-base-color has-text-color has-large-font-size" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Join thousands of teams already using our platform to build, ship, and scale their products faster than ever before.', 'krys' ); ?></p>
 		<!-- /wp:paragraph -->
 
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
 		<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--50)">
 			<!-- wp:button {"backgroundColor":"base","textColor":"contrast","fontSize":"medium"} -->
-			<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button"><?php esc_html_e( 'Start Free Trial', 'marcia' ); ?></a></div>
+			<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button"><?php esc_html_e( 'Start Free Trial', 'krys' ); ?></a></div>
 			<!-- /wp:button -->
 
 			<!-- wp:button {"backgroundColor":"transparent","textColor":"base","style":{"border":{"width":"2px","color":"#ffffff"}},"fontSize":"medium"} -->
-			<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link has-base-color has-transparent-background-color has-text-color has-background has-border-color wp-element-button" style="border-color:#ffffff;border-width:2px"><?php esc_html_e( 'Learn More', 'marcia' ); ?></a></div>
+			<div class="wp-block-button has-custom-font-size has-medium-font-size"><a class="wp-block-button__link has-base-color has-transparent-background-color has-text-color has-background has-border-color wp-element-button" style="border-color:#ffffff;border-width:2px"><?php esc_html_e( 'Learn More', 'krys' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

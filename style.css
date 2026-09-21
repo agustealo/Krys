@@ -1,21 +1,21 @@
 /*
-Theme Name: Marcia
-Theme URI: https://github.com/Zeus-Eternal/Krys
-Author: Marcia Theme
-Author URI: https://github.com/Zeus-Eternal
-Description: A modern WordPress block theme built for 2025 standards. Marcia combines performance-first architecture with premium features, offering 50+ block patterns, WooCommerce integration, and multiple style variations. Perfect for e-commerce, blogs, agencies, and creative portfolios.
+Theme Name: Krys
+Theme URI: https://github.com/agustealo/Krys
+Author: Krys Theme
+Author URI: https://github.com/agustealo
+Description: A modern WordPress block theme built for 2025 standards. Krys combines performance-first architecture with premium features, offering 50+ block patterns, WooCommerce integration, and multiple style variations. Perfect for e-commerce, blogs, agencies, and creative portfolios.
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.0
 Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: marcia
+Text Domain: krys
 Tags: block-patterns, block-styles, blog, custom-colors, custom-logo, custom-menu, e-commerce, editor-style, featured-images, flexible-header, footer-widgets, full-site-editing, one-column, rtl-language-support, sticky-post, threaded-comments, translation-ready, two-columns, wide-blocks
 */
 
 /**
- * Marcia Theme 2025
+ * Krys Theme 2025
  *
  * This is a block theme (Full Site Editing).
  * All styling is handled through theme.json and block styles.

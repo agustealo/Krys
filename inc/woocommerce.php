@@ -2,9 +2,9 @@
 /**
  * WooCommerce Integration
  *
- * Customize WooCommerce for Marcia theme.
+ * Customize WooCommerce for Krys theme.
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 2.0.0
  */
-function marcia_woocommerce_setup() {
+function krys_woocommerce_setup() {
 	// Declare WooCommerce support.
 	add_theme_support( 'woocommerce' );
 
@@ -43,14 +43,14 @@ function marcia_woocommerce_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'marcia_woocommerce_setup' );
+add_action( 'after_setup_theme', 'krys_woocommerce_setup' );
 
 /**
  * Enqueue WooCommerce styles.
  *
  * @since 2.0.0
  */
-function marcia_woocommerce_styles() {
+function krys_woocommerce_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Dequeue default WooCommerce styles.
@@ -60,13 +60,13 @@ function marcia_woocommerce_styles() {
 
 	// Enqueue custom WooCommerce styles.
 	wp_enqueue_style(
-		'marcia-woocommerce',
+		'krys-woocommerce',
 		get_template_directory_uri() . '/assets/css/blocks/woocommerce.css',
 		array(),
 		$theme_version
 	);
 }
-add_action( 'wp_enqueue_scripts', 'marcia_woocommerce_styles', 99 );
+add_action( 'wp_enqueue_scripts', 'krys_woocommerce_styles', 99 );
 
 /**
  * Customize WooCommerce product columns.
@@ -74,10 +74,10 @@ add_action( 'wp_enqueue_scripts', 'marcia_woocommerce_styles', 99 );
  * @since 2.0.0
  * @return int Number of columns.
  */
-function marcia_woocommerce_products_per_row() {
+function krys_woocommerce_products_per_row() {
 	return 3;
 }
-add_filter( 'loop_shop_columns', 'marcia_woocommerce_products_per_row' );
+add_filter( 'loop_shop_columns', 'krys_woocommerce_products_per_row' );
 
 /**
  * Customize products per page.
@@ -85,43 +85,43 @@ add_filter( 'loop_shop_columns', 'marcia_woocommerce_products_per_row' );
  * @since 2.0.0
  * @return int Number of products.
  */
-function marcia_woocommerce_products_per_page() {
+function krys_woocommerce_products_per_page() {
 	return 12;
 }
-add_filter( 'loop_shop_per_page', 'marcia_woocommerce_products_per_page' );
+add_filter( 'loop_shop_per_page', 'krys_woocommerce_products_per_page' );
 
 /**
  * Remove default WooCommerce wrappers.
  *
  * @since 2.0.0
  */
-function marcia_remove_woocommerce_wrappers() {
+function krys_remove_woocommerce_wrappers() {
 	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 }
-add_action( 'init', 'marcia_remove_woocommerce_wrappers' );
+add_action( 'init', 'krys_remove_woocommerce_wrappers' );
 
 /**
  * Add custom WooCommerce wrappers.
  *
  * @since 2.0.0
  */
-function marcia_woocommerce_wrapper_start() {
+function krys_woocommerce_wrapper_start() {
 	echo '<div class="wp-block-group alignfull" style="margin-top:0">';
 	echo '<div class="wp-block-group__inner-container">';
 }
-add_action( 'woocommerce_before_main_content', 'marcia_woocommerce_wrapper_start', 10 );
+add_action( 'woocommerce_before_main_content', 'krys_woocommerce_wrapper_start', 10 );
 
 /**
  * Close custom WooCommerce wrappers.
  *
  * @since 2.0.0
  */
-function marcia_woocommerce_wrapper_end() {
+function krys_woocommerce_wrapper_end() {
 	echo '</div>';
 	echo '</div>';
 }
-add_action( 'woocommerce_after_main_content', 'marcia_woocommerce_wrapper_end', 10 );
+add_action( 'woocommerce_after_main_content', 'krys_woocommerce_wrapper_end', 10 );
 
 /**
  * Customize product thumbnail size.
@@ -129,14 +129,14 @@ add_action( 'woocommerce_after_main_content', 'marcia_woocommerce_wrapper_end', 
  * @since 2.0.0
  * @return array Image size.
  */
-function marcia_woocommerce_thumbnail_size() {
+function krys_woocommerce_thumbnail_size() {
 	return array(
 		'width'  => 300,
 		'height' => 300,
 		'crop'   => 1,
 	);
 }
-add_filter( 'woocommerce_get_image_size_thumbnail', 'marcia_woocommerce_thumbnail_size' );
+add_filter( 'woocommerce_get_image_size_thumbnail', 'krys_woocommerce_thumbnail_size' );
 
 /**
  * Add cart icon to navigation.
@@ -146,7 +146,7 @@ add_filter( 'woocommerce_get_image_size_thumbnail', 'marcia_woocommerce_thumbnai
  * @param object $args  Menu arguments.
  * @return string Modified menu items.
  */
-function marcia_add_cart_to_menu( $items, $args ) {
+function krys_add_cart_to_menu( $items, $args ) {
 	// Only add to primary navigation.
 	if ( 'primary' === $args->theme_location ) {
 		$cart_count = WC()->cart->get_cart_contents_count();
@@ -163,20 +163,20 @@ function marcia_add_cart_to_menu( $items, $args ) {
 
 	return $items;
 }
-add_filter( 'wp_nav_menu_items', 'marcia_add_cart_to_menu', 10, 2 );
+add_filter( 'wp_nav_menu_items', 'krys_add_cart_to_menu', 10, 2 );
 
 /**
  * AJAX update cart count.
  *
  * @since 2.0.0
  */
-function marcia_update_cart_count() {
+function krys_update_cart_count() {
 	if ( class_exists( 'WooCommerce' ) ) {
 		wp_send_json( array( 'count' => WC()->cart->get_cart_contents_count() ) );
 	}
 }
-add_action( 'wp_ajax_marcia_update_cart_count', 'marcia_update_cart_count' );
-add_action( 'wp_ajax_nopriv_marcia_update_cart_count', 'marcia_update_cart_count' );
+add_action( 'wp_ajax_krys_update_cart_count', 'krys_update_cart_count' );
+add_action( 'wp_ajax_nopriv_krys_update_cart_count', 'krys_update_cart_count' );
 
 /**
  * Customize breadcrumbs.
@@ -185,24 +185,24 @@ add_action( 'wp_ajax_nopriv_marcia_update_cart_count', 'marcia_update_cart_count
  * @param array $args Breadcrumb arguments.
  * @return array Modified arguments.
  */
-function marcia_woocommerce_breadcrumbs( $args ) {
+function krys_woocommerce_breadcrumbs( $args ) {
 	$args['delimiter']   = ' / ';
 	$args['wrap_before'] = '<nav class="woocommerce-breadcrumb" aria-label="breadcrumb">';
 	$args['wrap_after']  = '</nav>';
 	$args['before']      = '<span>';
 	$args['after']       = '</span>';
-	$args['home']        = __( 'Home', 'marcia' );
+	$args['home']        = __( 'Home', 'krys' );
 
 	return $args;
 }
-add_filter( 'woocommerce_breadcrumb_defaults', 'marcia_woocommerce_breadcrumbs' );
+add_filter( 'woocommerce_breadcrumb_defaults', 'krys_woocommerce_breadcrumbs' );
 
 /**
  * Optimize WooCommerce scripts.
  *
  * @since 2.0.0
  */
-function marcia_optimize_woocommerce_scripts() {
+function krys_optimize_woocommerce_scripts() {
 	// Remove WooCommerce scripts on non-shop pages.
 	if ( ! is_woocommerce() && ! is_cart() && ! is_checkout() ) {
 		wp_dequeue_style( 'woocommerce-layout' );
@@ -213,4 +213,4 @@ function marcia_optimize_woocommerce_scripts() {
 		wp_dequeue_script( 'wc-add-to-cart' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'marcia_optimize_woocommerce_scripts', 99 );
+add_action( 'wp_enqueue_scripts', 'krys_optimize_woocommerce_scripts', 99 );

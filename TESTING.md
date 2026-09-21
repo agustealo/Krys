@@ -1,6 +1,6 @@
-# Testing Checklist - Marcia Theme 2.0.0
+# Testing Checklist - Krys Theme 2.0.0
 
-Complete quality assurance checklist for the Marcia WordPress theme before launch.
+Complete quality assurance checklist for the Krys WordPress theme before launch.
 
 ## Pre-Testing Setup
 
@@ -372,7 +372,7 @@ Test at multiple breakpoints:
 
 ### Translation Ready
 - [ ] All strings translatable
-- [ ] Text domain 'marcia' used
+- [ ] Text domain 'krys' used
 - [ ] Strings properly escaped
 - [ ] POT file generates
 - [ ] Plurals handled correctly

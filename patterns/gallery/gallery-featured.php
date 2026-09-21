@@ -1,18 +1,18 @@
 <?php
 /**
  * Title: Gallery Featured
- * Slug: marcia/gallery-featured
- * Categories: marcia-gallery
+ * Slug: krys/gallery-featured
+ * Categories: krys-gallery
  * Description: Gallery with one large featured image and smaller thumbnails
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
 	<!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}}} -->
-	<h2 class="wp-block-heading has-text-align-center" style="margin-bottom:var(--wp--preset--spacing--60)"><?php esc_html_e( 'Portfolio Showcase', 'marcia' ); ?></h2>
+	<h2 class="wp-block-heading has-text-align-center" style="margin-bottom:var(--wp--preset--spacing--60)"><?php esc_html_e( 'Portfolio Showcase', 'krys' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:image {"aspectRatio":"16/9","scale":"cover","sizeSlug":"full","linkDestination":"none","style":{"border":{"radius":"0.5rem"},"spacing":{"margin":{"bottom":"var:preset|spacing|40"}}}} -->
@@ -58,7 +58,7 @@
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--50)">
 		<!-- wp:button {"className":"is-style-outline"} -->
-		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'View All Projects', 'marcia' ); ?></a></div>
+		<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'View All Projects', 'krys' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->

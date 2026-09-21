@@ -1,18 +1,18 @@
 <?php
 /**
  * Title: Blog Grid
- * Slug: marcia/blog-grid
- * Categories: marcia-blog
+ * Slug: krys/blog-grid
+ * Categories: krys-blog
  * Description: 3-column blog post grid with featured images
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
 	<!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"bottom":"var:preset|spacing|60"}}}} -->
-	<h2 class="wp-block-heading has-text-align-center" style="margin-bottom:var(--wp--preset--spacing--60)"><?php esc_html_e( 'Latest Articles', 'marcia' ); ?></h2>
+	<h2 class="wp-block-heading has-text-align-center" style="margin-bottom:var(--wp--preset--spacing--60)"><?php esc_html_e( 'Latest Articles', 'krys' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:query {"queryId":1,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":false}} -->
@@ -33,7 +33,7 @@
 				</div>
 				<!-- /wp:group -->
 
-				<!-- wp:post-excerpt {"moreText":"<?php esc_attr_e( 'Read more', 'marcia' ); ?>","excerptLength":20,"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} /-->
+				<!-- wp:post-excerpt {"moreText":"<?php esc_attr_e( 'Read more', 'krys' ); ?>","excerptLength":20,"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} /-->
 			</div>
 			<!-- /wp:group -->
 		<!-- /wp:post-template -->

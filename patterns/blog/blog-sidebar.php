@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Blog with Sidebar
- * Slug: marcia/blog-sidebar
- * Categories: marcia-blog
+ * Slug: krys/blog-sidebar
+ * Categories: krys-blog
  * Description: Blog layout with sidebar for categories and recent posts
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -18,8 +18,8 @@
 			<!-- wp:query {"queryId":1,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"exclude","inherit":true}} -->
 			<div class="wp-block-query">
 				<!-- wp:post-template {"style":{"spacing":{"blockGap":"var:preset|spacing|60"}}} -->
-					<!-- wp:group {"className":"is-style-marcia-card","layout":{"type":"default"}} -->
-					<div class="wp-block-group is-style-marcia-card">
+					<!-- wp:group {"className":"is-style-krys-card","layout":{"type":"default"}} -->
+					<div class="wp-block-group is-style-krys-card">
 						<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"16/9","style":{"border":{"radius":"0.5rem"}}} /-->
 
 						<!-- wp:post-title {"isLink":true,"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} /-->
@@ -43,20 +43,20 @@
 
 		<!-- wp:column {"width":"33.33%"} -->
 		<div class="wp-block-column" style="flex-basis:33.33%">
-			<!-- wp:group {"className":"is-style-marcia-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"},"margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
-			<div class="wp-block-group is-style-marcia-card" style="margin-bottom:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+			<!-- wp:group {"className":"is-style-krys-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"},"margin":{"bottom":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
+			<div class="wp-block-group is-style-krys-card" style="margin-bottom:var(--wp--preset--spacing--50);padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 				<!-- wp:heading {"level":3} -->
-				<h3 class="wp-block-heading"><?php esc_html_e( 'Categories', 'marcia' ); ?></h3>
+				<h3 class="wp-block-heading"><?php esc_html_e( 'Categories', 'krys' ); ?></h3>
 				<!-- /wp:heading -->
 
 				<!-- wp:categories {"showHierarchy":true,"showPostCounts":true,"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} /-->
 			</div>
 			<!-- /wp:group -->
 
-			<!-- wp:group {"className":"is-style-marcia-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
-			<div class="wp-block-group is-style-marcia-card" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
+			<!-- wp:group {"className":"is-style-krys-card","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","right":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
+			<div class="wp-block-group is-style-krys-card" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 				<!-- wp:heading {"level":3} -->
-				<h3 class="wp-block-heading"><?php esc_html_e( 'Recent Posts', 'marcia' ); ?></h3>
+				<h3 class="wp-block-heading"><?php esc_html_e( 'Recent Posts', 'krys' ); ?></h3>
 				<!-- /wp:heading -->
 
 				<!-- wp:latest-posts {"displayPostDate":true,"displayFeaturedImage":true,"featuredImageSizeSlug":"thumbnail","style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} /-->

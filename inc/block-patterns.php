@@ -4,7 +4,7 @@
  *
  * Pattern registration and management.
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @since 2.0.0
  */
-function marcia_load_patterns() {
+function krys_load_patterns() {
 	$pattern_dirs = array(
 		'hidden',
 		'hero',
@@ -50,15 +50,15 @@ function marcia_load_patterns() {
 		}
 	}
 }
-add_action( 'init', 'marcia_load_patterns' );
+add_action( 'init', 'krys_load_patterns' );
 
 /**
  * Unregister core patterns we don't want.
  *
  * @since 2.0.0
  */
-function marcia_unregister_core_patterns() {
+function krys_unregister_core_patterns() {
 	// Remove all default WordPress patterns.
 	remove_theme_support( 'core-block-patterns' );
 }
-add_action( 'after_setup_theme', 'marcia_unregister_core_patterns' );
+add_action( 'after_setup_theme', 'krys_unregister_core_patterns' );

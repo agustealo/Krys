@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Author Bio
- * Slug: marcia/blog-author-bio
- * Categories: marcia-blog
+ * Slug: krys/blog-author-bio
+ * Categories: krys-blog
  * Description: Author biography box for posts
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -22,7 +22,7 @@
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
 			<!-- wp:heading {"level":3,"fontSize":"large"} -->
-			<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'About the Author', 'marcia' ); ?></h3>
+			<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'About the Author', 'krys' ); ?></h3>
 			<!-- /wp:heading -->
 
 			<!-- wp:post-author-name {"style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} /-->

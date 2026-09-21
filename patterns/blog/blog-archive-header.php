@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Archive Header
- * Slug: marcia/blog-archive-header
- * Categories: marcia-blog
+ * Slug: krys/blog-archive-header
+ * Categories: krys-blog
  * Description: Header section for blog archives with title and description
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>

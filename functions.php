@@ -1,11 +1,11 @@
 <?php
 /**
- * Marcia Theme Functions
+ * Krys Theme Functions
  *
  * This is a block theme - most functionality is handled through theme.json.
  * This file contains only essential setup and performance optimizations.
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 
@@ -14,17 +14,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Marcia Theme Setup
+ * Krys Theme Setup
  */
-if ( ! function_exists( 'marcia_setup' ) ) {
+if ( ! function_exists( 'krys_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
 	 * @since 2.0.0
 	 */
-	function marcia_setup() {
+	function krys_setup() {
 		// Make theme available for translation.
-		load_theme_textdomain( 'marcia', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'krys', get_template_directory() . '/languages' );
 
 		// Add support for Block Styles.
 		add_theme_support( 'wp-block-styles' );
@@ -68,20 +68,20 @@ if ( ! function_exists( 'marcia_setup' ) ) {
 		remove_theme_support( 'core-block-patterns' );
 	}
 }
-add_action( 'after_setup_theme', 'marcia_setup' );
+add_action( 'after_setup_theme', 'krys_setup' );
 
 /**
  * Enqueue theme styles and scripts.
  *
  * @since 2.0.0
  */
-function marcia_enqueue_assets() {
+function krys_enqueue_assets() {
 	// Theme version for cache busting.
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Enqueue base styles.
 	wp_enqueue_style(
-		'marcia-base',
+		'krys-base',
 		get_template_directory_uri() . '/assets/css/base.css',
 		array(),
 		$theme_version
@@ -90,7 +90,7 @@ function marcia_enqueue_assets() {
 	// Enqueue block styles conditionally based on blocks present.
 	if ( has_block( 'core/navigation' ) ) {
 		wp_enqueue_style(
-			'marcia-navigation',
+			'krys-navigation',
 			get_template_directory_uri() . '/assets/css/blocks/core-navigation.css',
 			array(),
 			$theme_version
@@ -99,7 +99,7 @@ function marcia_enqueue_assets() {
 
 	if ( has_block( 'core/button' ) ) {
 		wp_enqueue_style(
-			'marcia-button',
+			'krys-button',
 			get_template_directory_uri() . '/assets/css/blocks/core-button.css',
 			array(),
 			$theme_version
@@ -108,52 +108,52 @@ function marcia_enqueue_assets() {
 
 	// Enqueue fonts.
 	wp_enqueue_style(
-		'marcia-fonts',
+		'krys-fonts',
 		get_template_directory_uri() . '/assets/fonts/font-face.css',
 		array(),
 		$theme_version
 	);
 }
-add_action( 'wp_enqueue_scripts', 'marcia_enqueue_assets' );
+add_action( 'wp_enqueue_scripts', 'krys_enqueue_assets' );
 
 /**
  * Enqueue editor assets.
  *
  * @since 2.0.0
  */
-function marcia_enqueue_editor_assets() {
+function krys_enqueue_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Enqueue editor styles.
 	wp_enqueue_style(
-		'marcia-editor',
+		'krys-editor',
 		get_template_directory_uri() . '/assets/css/editor.css',
 		array(),
 		$theme_version
 	);
 }
-add_action( 'enqueue_block_editor_assets', 'marcia_enqueue_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'krys_enqueue_editor_assets' );
 
 /**
  * Add custom block styles.
  *
  * @since 2.0.0
  */
-function marcia_register_block_styles() {
+function krys_register_block_styles() {
 	// Button styles.
 	register_block_style(
 		'core/button',
 		array(
-			'name'  => 'marcia-outline',
-			'label' => __( 'Outline', 'marcia' ),
+			'name'  => 'krys-outline',
+			'label' => __( 'Outline', 'krys' ),
 		)
 	);
 
 	register_block_style(
 		'core/button',
 		array(
-			'name'  => 'marcia-ghost',
-			'label' => __( 'Ghost', 'marcia' ),
+			'name'  => 'krys-ghost',
+			'label' => __( 'Ghost', 'krys' ),
 		)
 	);
 
@@ -161,8 +161,8 @@ function marcia_register_block_styles() {
 	register_block_style(
 		'core/list',
 		array(
-			'name'  => 'marcia-checkmarks',
-			'label' => __( 'Checkmarks', 'marcia' ),
+			'name'  => 'krys-checkmarks',
+			'label' => __( 'Checkmarks', 'krys' ),
 		)
 	);
 
@@ -170,63 +170,63 @@ function marcia_register_block_styles() {
 	register_block_style(
 		'core/group',
 		array(
-			'name'  => 'marcia-card',
-			'label' => __( 'Card', 'marcia' ),
+			'name'  => 'krys-card',
+			'label' => __( 'Card', 'krys' ),
 		)
 	);
 
 	register_block_style(
 		'core/group',
 		array(
-			'name'  => 'marcia-shadow',
-			'label' => __( 'Shadow', 'marcia' ),
+			'name'  => 'krys-shadow',
+			'label' => __( 'Shadow', 'krys' ),
 		)
 	);
 }
-add_action( 'init', 'marcia_register_block_styles' );
+add_action( 'init', 'krys_register_block_styles' );
 
 /**
  * Register block pattern categories.
  *
  * @since 2.0.0
  */
-function marcia_register_pattern_categories() {
+function krys_register_pattern_categories() {
 	$categories = array(
-		'marcia-hero'         => array(
-			'label'       => __( 'Hero Sections', 'marcia' ),
-			'description' => __( 'Eye-catching hero sections for landing pages', 'marcia' ),
+		'krys-hero'         => array(
+			'label'       => __( 'Hero Sections', 'krys' ),
+			'description' => __( 'Eye-catching hero sections for landing pages', 'krys' ),
 		),
-		'marcia-features'     => array(
-			'label'       => __( 'Features', 'marcia' ),
-			'description' => __( 'Feature sections and service showcases', 'marcia' ),
+		'krys-features'     => array(
+			'label'       => __( 'Features', 'krys' ),
+			'description' => __( 'Feature sections and service showcases', 'krys' ),
 		),
-		'marcia-testimonials' => array(
-			'label'       => __( 'Testimonials', 'marcia' ),
-			'description' => __( 'Customer testimonials and reviews', 'marcia' ),
+		'krys-testimonials' => array(
+			'label'       => __( 'Testimonials', 'krys' ),
+			'description' => __( 'Customer testimonials and reviews', 'krys' ),
 		),
-		'marcia-pricing'      => array(
-			'label'       => __( 'Pricing', 'marcia' ),
-			'description' => __( 'Pricing tables and plans', 'marcia' ),
+		'krys-pricing'      => array(
+			'label'       => __( 'Pricing', 'krys' ),
+			'description' => __( 'Pricing tables and plans', 'krys' ),
 		),
-		'marcia-blog'         => array(
-			'label'       => __( 'Blog', 'marcia' ),
-			'description' => __( 'Blog layouts and post grids', 'marcia' ),
+		'krys-blog'         => array(
+			'label'       => __( 'Blog', 'krys' ),
+			'description' => __( 'Blog layouts and post grids', 'krys' ),
 		),
-		'marcia-shop'         => array(
-			'label'       => __( 'Shop', 'marcia' ),
-			'description' => __( 'E-commerce patterns for WooCommerce', 'marcia' ),
+		'krys-shop'         => array(
+			'label'       => __( 'Shop', 'krys' ),
+			'description' => __( 'E-commerce patterns for WooCommerce', 'krys' ),
 		),
-		'marcia-team'         => array(
-			'label'       => __( 'Team', 'marcia' ),
-			'description' => __( 'Team member showcases', 'marcia' ),
+		'krys-team'         => array(
+			'label'       => __( 'Team', 'krys' ),
+			'description' => __( 'Team member showcases', 'krys' ),
 		),
-		'marcia-cta'          => array(
-			'label'       => __( 'Call to Action', 'marcia' ),
-			'description' => __( 'Call-to-action sections', 'marcia' ),
+		'krys-cta'          => array(
+			'label'       => __( 'Call to Action', 'krys' ),
+			'description' => __( 'Call-to-action sections', 'krys' ),
 		),
-		'marcia-content'      => array(
-			'label'       => __( 'Content', 'marcia' ),
-			'description' => __( 'Content layouts and grids', 'marcia' ),
+		'krys-content'      => array(
+			'label'       => __( 'Content', 'krys' ),
+			'description' => __( 'Content layouts and grids', 'krys' ),
 		),
 	);
 
@@ -234,7 +234,7 @@ function marcia_register_pattern_categories() {
 		register_block_pattern_category( $slug, $args );
 	}
 }
-add_action( 'init', 'marcia_register_pattern_categories' );
+add_action( 'init', 'krys_register_pattern_categories' );
 
 /**
  * Load additional theme files.

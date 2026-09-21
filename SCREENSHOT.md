@@ -17,7 +17,7 @@ For WordPress.org theme submission, a screenshot is required:
 
 1. **Setup Demo Site**
    - Install WordPress locally or on staging
-   - Activate the Marcia theme
+   - Activate the Krys theme
    - Use one of the style variations (Minimal recommended for screenshot)
 
 2. **Create Homepage**
@@ -47,7 +47,7 @@ For WordPress.org theme submission, a screenshot is required:
 5. **Place Screenshot**
    ```bash
    # Move screenshot to theme root
-   mv screenshot.png /path/to/themes/marcia/
+   mv screenshot.png /path/to/themes/krys/
    ```
 
 ### Screenshot Content Suggestions

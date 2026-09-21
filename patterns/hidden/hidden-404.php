@@ -1,10 +1,10 @@
 <?php
 /**
  * Title: 404 Pattern
- * Slug: marcia/hidden-404
+ * Slug: krys/hidden-404
  * Inserter: no
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -15,17 +15,17 @@
 	<!-- /wp:heading -->
 
 	<!-- wp:heading {"textAlign":"center"} -->
-	<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'Page Not Found', 'marcia' ); ?></h2>
+	<h2 class="wp-block-heading has-text-align-center"><?php esc_html_e( 'Page Not Found', 'krys' ); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"align":"center"} -->
-	<p class="has-text-align-center"><?php esc_html_e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'marcia' ); ?></p>
+	<p class="has-text-align-center"><?php esc_html_e( 'The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'krys' ); ?></p>
 	<!-- /wp:paragraph -->
 
 	<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"var:preset|spacing|50"}}}} -->
 	<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--50)">
 		<!-- wp:button -->
-		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Go to Homepage', 'marcia' ); ?></a></div>
+		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Go to Homepage', 'krys' ); ?></a></div>
 		<!-- /wp:button -->
 	</div>
 	<!-- /wp:buttons -->

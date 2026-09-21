@@ -1,8 +1,8 @@
 {
-	"name": "marcia",
+	"name": "krys",
 	"version": "2.0.0",
 	"description": "A modern WordPress block theme built for 2025 standards with performance-first approach and premium features.",
-	"author": "Marcia Theme",
+	"author": "Krys Theme",
 	"license": "GPL-2.0-or-later",
 	"keywords": [
 		"wordpress",
@@ -13,13 +13,13 @@
 		"woocommerce",
 		"e-commerce"
 	],
-	"homepage": "https://github.com/Zeus-Eternal/Krys",
+	"homepage": "https://github.com/agustealo/Krys",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Zeus-Eternal/Krys.git"
+		"url": "https://github.com/agustealo/Krys.git"
 	},
 	"bugs": {
-		"url": "https://github.com/Zeus-Eternal/Krys/issues"
+		"url": "https://github.com/agustealo/Krys/issues"
 	},
 	"engines": {
 		"node": ">=18.0.0",
@@ -43,7 +43,7 @@
 		"test:performance": "echo \"Performance testing coming soon\" && exit 0",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"zip": "npm run build && zip -r marcia.zip . -x '*.git*' 'node_modules/*' '.DS_Store' 'package-lock.json' '.editorconfig' '.eslintrc.js' '.prettierrc.js'",
+		"zip": "npm run build && zip -r krys.zip . -x '*.git*' 'node_modules/*' '.DS_Store' 'package-lock.json' '.editorconfig' '.eslintrc.js' '.prettierrc.js'",
 		"preversion": "npm run lint && npm run build",
 		"version": "npm run build",
 		"postversion": "git push && git push --tags"

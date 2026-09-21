@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: New Arrivals
- * Slug: marcia/shop-new-arrivals
- * Categories: marcia-shop
+ * Slug: krys/shop-new-arrivals
+ * Categories: krys-shop
  * Description: Showcase new product arrivals
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -16,19 +16,19 @@
 		<!-- wp:group {"layout":{"type":"default"}} -->
 		<div class="wp-block-group">
 			<!-- wp:heading -->
-			<h2 class="wp-block-heading"><?php esc_html_e( 'New Arrivals', 'marcia' ); ?></h2>
+			<h2 class="wp-block-heading"><?php esc_html_e( 'New Arrivals', 'krys' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p><?php esc_html_e( 'Check out our latest products', 'marcia' ); ?></p>
+			<p><?php esc_html_e( 'Check out our latest products', 'krys' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
 
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
-			<!-- wp:button {"className":"is-style-marcia-outline"} -->
-			<div class="wp-block-button is-style-marcia-outline"><a class="wp-block-button__link wp-element-button" href="/shop?orderby=date"><?php esc_html_e( 'View All New', 'marcia' ); ?></a></div>
+			<!-- wp:button {"className":"is-style-krys-outline"} -->
+			<div class="wp-block-button is-style-krys-outline"><a class="wp-block-button__link wp-element-button" href="/shop?orderby=date"><?php esc_html_e( 'View All New', 'krys' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->
@@ -43,7 +43,7 @@
 				<!-- wp:group {"style":{"spacing":{"padding":{"top":"0.25rem","right":"0.5rem","bottom":"0.25rem","left":"0.5rem"},"margin":{"bottom":"var:preset|spacing|30"}},"border":{"radius":"0.25rem"}},"backgroundColor":"success","textColor":"base","layout":{"type":"constrained"}} -->
 				<div class="wp-block-group has-base-color has-success-background-color has-text-color has-background" style="border-radius:0.25rem;margin-bottom:var(--wp--preset--spacing--30);padding-top:0.25rem;padding-right:0.5rem;padding-bottom:0.25rem;padding-left:0.5rem">
 					<!-- wp:paragraph {"align":"center","fontSize":"small"} -->
-					<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'NEW', 'marcia' ); ?></p>
+					<p class="has-text-align-center has-small-font-size"><?php esc_html_e( 'NEW', 'krys' ); ?></p>
 					<!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->

@@ -4,7 +4,7 @@
  *
  * Performance enhancements and optimizations.
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 
@@ -20,10 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @param string $handle The stylesheet's registered handle.
  * @return string Modified link tag.
  */
-function marcia_defer_non_critical_css( $tag, $handle ) {
+function krys_defer_non_critical_css( $tag, $handle ) {
 	// List of non-critical stylesheets to defer.
 	$defer_styles = array(
-		'marcia-blocks',
+		'krys-blocks',
 	);
 
 	if ( in_array( $handle, $defer_styles, true ) ) {
@@ -33,14 +33,14 @@ function marcia_defer_non_critical_css( $tag, $handle ) {
 
 	return $tag;
 }
-add_filter( 'style_loader_tag', 'marcia_defer_non_critical_css', 10, 2 );
+add_filter( 'style_loader_tag', 'krys_defer_non_critical_css', 10, 2 );
 
 /**
  * Add preconnect for external resources.
  *
  * @since 2.0.0
  */
-function marcia_resource_hints() {
+function krys_resource_hints() {
 	// DNS prefetch for common domains.
 	echo '<link rel="dns-prefetch" href="//fonts.googleapis.com">';
 	echo '<link rel="dns-prefetch" href="//fonts.gstatic.com">';
@@ -49,7 +49,7 @@ function marcia_resource_hints() {
 	echo '<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>';
 	echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
 }
-add_action( 'wp_head', 'marcia_resource_hints', 1 );
+add_action( 'wp_head', 'krys_resource_hints', 1 );
 
 /**
  * Optimize script loading.
@@ -59,10 +59,10 @@ add_action( 'wp_head', 'marcia_resource_hints', 1 );
  * @param string $handle The script's registered handle.
  * @return string Modified script tag.
  */
-function marcia_defer_scripts( $tag, $handle ) {
+function krys_defer_scripts( $tag, $handle ) {
 	// Scripts to defer.
 	$defer_scripts = array(
-		'marcia-script',
+		'krys-script',
 	);
 
 	if ( in_array( $handle, $defer_scripts, true ) ) {
@@ -71,14 +71,14 @@ function marcia_defer_scripts( $tag, $handle ) {
 
 	return $tag;
 }
-add_filter( 'script_loader_tag', 'marcia_defer_scripts', 10, 2 );
+add_filter( 'script_loader_tag', 'krys_defer_scripts', 10, 2 );
 
 /**
  * Remove unnecessary WordPress features.
  *
  * @since 2.0.0
  */
-function marcia_remove_unnecessary_features() {
+function krys_remove_unnecessary_features() {
 	// Remove emoji scripts and styles.
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
@@ -97,18 +97,18 @@ function marcia_remove_unnecessary_features() {
 	// Remove shortlink.
 	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 }
-add_action( 'init', 'marcia_remove_unnecessary_features' );
+add_action( 'init', 'krys_remove_unnecessary_features' );
 
 /**
  * Optimize image loading.
  *
  * @since 2.0.0
  */
-function marcia_optimize_images() {
+function krys_optimize_images() {
 	// Add lazy loading to images (WordPress 5.5+).
 	add_filter( 'wp_lazy_loading_enabled', '__return_true' );
 }
-add_action( 'after_setup_theme', 'marcia_optimize_images' );
+add_action( 'after_setup_theme', 'krys_optimize_images' );
 
 /**
  * Enable WebP support.
@@ -117,12 +117,12 @@ add_action( 'after_setup_theme', 'marcia_optimize_images' );
  * @param array $mimes Existing mime types.
  * @return array Modified mime types.
  */
-function marcia_enable_webp( $mimes ) {
+function krys_enable_webp( $mimes ) {
 	$mimes['webp'] = 'image/webp';
 	$mimes['avif'] = 'image/avif';
 	return $mimes;
 }
-add_filter( 'upload_mimes', 'marcia_enable_webp' );
+add_filter( 'upload_mimes', 'krys_enable_webp' );
 
 /**
  * Optimize query performance.
@@ -130,7 +130,7 @@ add_filter( 'upload_mimes', 'marcia_enable_webp' );
  * @since 2.0.0
  * @param WP_Query $query The WordPress query object.
  */
-function marcia_optimize_queries( $query ) {
+function krys_optimize_queries( $query ) {
 	if ( ! is_admin() && $query->is_main_query() ) {
 		// Limit post revisions shown.
 		if ( $query->is_singular() ) {
@@ -144,7 +144,7 @@ function marcia_optimize_queries( $query ) {
 		}
 	}
 }
-add_action( 'pre_get_posts', 'marcia_optimize_queries' );
+add_action( 'pre_get_posts', 'krys_optimize_queries' );
 
 /**
  * Disable XML-RPC for security.
@@ -167,12 +167,12 @@ if ( ! defined( 'WP_POST_REVISIONS' ) ) {
  *
  * @since 2.0.0
  */
-function marcia_add_cache_headers() {
+function krys_add_cache_headers() {
 	if ( ! is_admin() ) {
 		header( 'Cache-Control: public, max-age=31536000' );
 	}
 }
-add_action( 'send_headers', 'marcia_add_cache_headers' );
+add_action( 'send_headers', 'krys_add_cache_headers' );
 
 /**
  * Remove query strings from static resources.
@@ -181,21 +181,21 @@ add_action( 'send_headers', 'marcia_add_cache_headers' );
  * @param string $src The source URL.
  * @return string Modified URL.
  */
-function marcia_remove_query_strings( $src ) {
+function krys_remove_query_strings( $src ) {
 	if ( strpos( $src, '?ver=' ) ) {
 		$src = remove_query_arg( 'ver', $src );
 	}
 	return $src;
 }
-add_filter( 'style_loader_src', 'marcia_remove_query_strings', 10, 1 );
-add_filter( 'script_loader_src', 'marcia_remove_query_strings', 10, 1 );
+add_filter( 'style_loader_src', 'krys_remove_query_strings', 10, 1 );
+add_filter( 'script_loader_src', 'krys_remove_query_strings', 10, 1 );
 
 /**
  * Preload critical assets.
  *
  * @since 2.0.0
  */
-function marcia_preload_critical_assets() {
+function krys_preload_critical_assets() {
 	// Preload theme stylesheet.
 	echo '<link rel="preload" href="' . esc_url( get_stylesheet_uri() ) . '" as="style">';
 
@@ -205,14 +205,14 @@ function marcia_preload_critical_assets() {
 		echo '<link rel="preload" href="' . esc_url( $font_path . 'inter-variable.woff2' ) . '" as="font" type="font/woff2" crossorigin>';
 	}
 }
-add_action( 'wp_head', 'marcia_preload_critical_assets', 0 );
+add_action( 'wp_head', 'krys_preload_critical_assets', 0 );
 
 /**
  * Optimize font loading.
  *
  * @since 2.0.0
  */
-function marcia_optimize_fonts() {
+function krys_optimize_fonts() {
 	// Add font-display: swap to Google Fonts.
 	add_filter(
 		'wp_resource_hints',
@@ -233,14 +233,14 @@ function marcia_optimize_fonts() {
 		2
 	);
 }
-add_action( 'after_setup_theme', 'marcia_optimize_fonts' );
+add_action( 'after_setup_theme', 'krys_optimize_fonts' );
 
 /**
  * Disable embeds.
  *
  * @since 2.0.0
  */
-function marcia_disable_embeds() {
+function krys_disable_embeds() {
 	// Remove embed scripts.
 	wp_deregister_script( 'wp-embed' );
 
@@ -250,7 +250,7 @@ function marcia_disable_embeds() {
 	// Remove embed-specific JavaScript.
 	remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 }
-add_action( 'init', 'marcia_disable_embeds', 9999 );
+add_action( 'init', 'krys_disable_embeds', 9999 );
 
 /**
  * Optimize heartbeat API.
@@ -259,43 +259,43 @@ add_action( 'init', 'marcia_disable_embeds', 9999 );
  * @param array $settings Heartbeat settings.
  * @return array Modified settings.
  */
-function marcia_optimize_heartbeat( $settings ) {
+function krys_optimize_heartbeat( $settings ) {
 	// Slow down heartbeat to every 60 seconds.
 	$settings['interval'] = 60;
 	return $settings;
 }
-add_filter( 'heartbeat_settings', 'marcia_optimize_heartbeat' );
+add_filter( 'heartbeat_settings', 'krys_optimize_heartbeat' );
 
 /**
  * Disable heartbeat on frontend.
  *
  * @since 2.0.0
  */
-function marcia_disable_frontend_heartbeat() {
+function krys_disable_frontend_heartbeat() {
 	if ( ! is_admin() ) {
 		wp_deregister_script( 'heartbeat' );
 	}
 }
-add_action( 'init', 'marcia_disable_frontend_heartbeat', 1 );
+add_action( 'init', 'krys_disable_frontend_heartbeat', 1 );
 
 /**
  * Optimize block editor assets.
  *
  * @since 2.0.0
  */
-function marcia_optimize_block_editor() {
+function krys_optimize_block_editor() {
 	// Remove global styles inline output on frontend.
 	remove_action( 'wp_enqueue_scripts', 'wp_enqueue_global_styles' );
 	remove_action( 'wp_body_open', 'wp_global_styles_render_svg_filters' );
 }
-add_action( 'after_setup_theme', 'marcia_optimize_block_editor' );
+add_action( 'after_setup_theme', 'krys_optimize_block_editor' );
 
 /**
  * Conditional WooCommerce scripts loading.
  *
  * @since 2.0.0
  */
-function marcia_conditional_woocommerce_scripts() {
+function krys_conditional_woocommerce_scripts() {
 	if ( ! class_exists( 'WooCommerce' ) ) {
 		return;
 	}
@@ -313,14 +313,14 @@ function marcia_conditional_woocommerce_scripts() {
 		wp_dequeue_script( 'woocommerce' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'marcia_conditional_woocommerce_scripts', 99 );
+add_action( 'wp_enqueue_scripts', 'krys_conditional_woocommerce_scripts', 99 );
 
 /**
  * Optimize database with auto-cleanup.
  *
  * @since 2.0.0
  */
-function marcia_database_optimization() {
+function krys_database_optimization() {
 	// Limit number of post revisions.
 	if ( ! defined( 'WP_POST_REVISIONS' ) ) {
 		define( 'WP_POST_REVISIONS', 3 );
@@ -336,14 +336,14 @@ function marcia_database_optimization() {
 		define( 'WP_MEMORY_LIMIT', '256M' );
 	}
 }
-add_action( 'init', 'marcia_database_optimization' );
+add_action( 'init', 'krys_database_optimization' );
 
 /**
  * Enable compression for theme assets.
  *
  * @since 2.0.0
  */
-function marcia_enable_compression() {
+function krys_enable_compression() {
 	if ( ! is_admin() ) {
 		// Enable Gzip compression.
 		if ( ! ini_get( 'zlib.output_compression' ) && 'ob_gzhandler' !== ini_get( 'output_handler' ) ) {
@@ -353,4 +353,4 @@ function marcia_enable_compression() {
 		}
 	}
 }
-add_action( 'init', 'marcia_enable_compression' );
+add_action( 'init', 'krys_enable_compression' );

@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: CTA Split Layout
- * Slug: marcia/cta-split
- * Categories: marcia-cta
+ * Slug: krys/cta-split
+ * Categories: krys-cta
  * Description: Call-to-action with split background and content
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -16,11 +16,11 @@
 		<!-- wp:column {"verticalAlignment":"center","width":"60%"} -->
 		<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:60%">
 			<!-- wp:heading {"fontSize":"xx-large"} -->
-			<h2 class="wp-block-heading has-xx-large-font-size"><?php esc_html_e( 'Ready to Get Started?', 'marcia' ); ?></h2>
+			<h2 class="wp-block-heading has-xx-large-font-size"><?php esc_html_e( 'Ready to Get Started?', 'krys' ); ?></h2>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}},"fontSize":"large"} -->
-			<p class="has-large-font-size" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Join thousands of teams already using our platform to build better products faster.', 'marcia' ); ?></p>
+			<p class="has-large-font-size" style="margin-top:var(--wp--preset--spacing--40)"><?php esc_html_e( 'Join thousands of teams already using our platform to build better products faster.', 'krys' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->
@@ -30,13 +30,13 @@
 			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
 			<div class="wp-block-buttons">
 				<!-- wp:button {"backgroundColor":"base","textColor":"contrast","width":100,"fontSize":"medium"} -->
-				<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-medium-font-size"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button"><?php esc_html_e( 'Start Free Trial', 'marcia' ); ?></a></div>
+				<div class="wp-block-button has-custom-width wp-block-button__width-100 has-custom-font-size has-medium-font-size"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button"><?php esc_html_e( 'Start Free Trial', 'krys' ); ?></a></div>
 				<!-- /wp:button -->
 			</div>
 			<!-- /wp:buttons -->
 
 			<!-- wp:paragraph {"align":"center","fontSize":"small","style":{"spacing":{"margin":{"top":"var:preset|spacing|30"}}}} -->
-			<p class="has-text-align-center has-small-font-size" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'No credit card required', 'marcia' ); ?></p>
+			<p class="has-text-align-center has-small-font-size" style="margin-top:var(--wp--preset--spacing--30)"><?php esc_html_e( 'No credit card required', 'krys' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:column -->

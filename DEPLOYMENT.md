@@ -1,6 +1,6 @@
-# Deployment Guide - Marcia Theme 2.0.0
+# Deployment Guide - Krys Theme 2.0.0
 
-Complete deployment and installation guide for the Marcia WordPress theme.
+Complete deployment and installation guide for the Krys WordPress theme.
 
 ## Table of Contents
 
@@ -47,8 +47,8 @@ For building from source:
 
 ```bash
 # Clone the theme repository
-git clone https://github.com/Zeus-Eternal/Krys.git marcia
-cd marcia
+git clone https://github.com/agustealo/Krys.git krys
+cd krys
 ```
 
 ### 2. Install Dependencies
@@ -91,11 +91,11 @@ rsync -av --exclude-from='.gitignore' \
   --exclude='node_modules' \
   --exclude='dist' \
   --exclude='*.zip' \
-  . dist/marcia/
+  . dist/krys/
 
 # Create ZIP file
 cd dist
-zip -r marcia-2.0.0.zip marcia/
+zip -r krys-2.0.0.zip krys/
 ```
 
 ---
@@ -121,14 +121,14 @@ zip -r marcia-2.0.0.zip marcia/
 # Using SFTP
 sftp user@yourdomain.com
 cd /wp-content/themes/
-put -r marcia/
+put -r krys/
 exit
 ```
 
 Or using FTP client (FileZilla, Cyberduck):
 1. Connect to your server
 2. Navigate to `/wp-content/themes/`
-3. Upload the `marcia` folder
+3. Upload the `krys` folder
 4. Activate via WordPress Admin
 
 ### Method 3: Git Deployment
@@ -143,10 +143,10 @@ ssh user@yourdomain.com
 cd /path/to/wordpress/wp-content/themes/
 
 # Clone repository
-git clone https://github.com/Zeus-Eternal/Krys.git marcia
+git clone https://github.com/agustealo/Krys.git krys
 
 # Enter theme directory
-cd marcia
+cd krys
 
 # Checkout specific version/tag
 git checkout v2.0.0
@@ -161,13 +161,13 @@ npm install && npm run build
 
 ```bash
 # Install theme from ZIP
-wp theme install marcia-2.0.0.zip
+wp theme install krys-2.0.0.zip
 
 # Or install from WordPress.org (once published)
-wp theme install marcia
+wp theme install krys
 
 # Activate theme
-wp theme activate marcia
+wp theme activate krys
 
 # Check theme status
 wp theme list
@@ -194,12 +194,12 @@ Most managed hosts provide:
 
 Via WordPress Admin:
 ```
-Appearance > Themes > Marcia > Activate
+Appearance > Themes > Krys > Activate
 ```
 
 Via WP-CLI:
 ```bash
-wp theme activate marcia
+wp theme activate krys
 ```
 
 ### 2. Install Recommended Plugins
@@ -415,8 +415,8 @@ wp plugin deactivate --all
 # Switch to default theme
 wp theme activate twentytwentyfour
 
-# Re-activate Marcia
-wp theme activate marcia
+# Re-activate Krys
+wp theme activate krys
 
 # Enable plugins one by one
 wp plugin activate plugin-name
@@ -433,7 +433,7 @@ wp cache flush
 # Varies by plugin
 
 # Verify patterns directory exists
-ls -la wp-content/themes/marcia/patterns/
+ls -la wp-content/themes/krys/patterns/
 ```
 
 #### Style Variations Not Showing
@@ -504,8 +504,8 @@ wp theme activate twentytwentyfour
 
 # Or revert to previous theme version
 cd wp-content/themes/
-mv marcia marcia-new
-mv marcia-backup marcia
+mv krys krys-new
+mv krys-backup krys
 ```
 
 ### Database Backup
@@ -516,7 +516,7 @@ mv marcia-backup marcia
 wp db export backup-$(date +%Y%m%d).sql
 
 # Backup files
-tar -czf backup-files-$(date +%Y%m%d).tar.gz wp-content/themes/marcia
+tar -czf backup-files-$(date +%Y%m%d).tar.gz wp-content/themes/krys
 ```
 
 **Restore if needed:**
@@ -601,7 +601,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /wp-content/themes/marcia/
+          server-dir: /wp-content/themes/krys/
 ```
 
 ---
@@ -612,17 +612,17 @@ jobs:
 
 ```bash
 # Activate theme network-wide
-wp theme enable marcia --network
+wp theme enable krys --network
 
 # Or via WordPress Admin:
-# Network Admin > Themes > Marcia > Network Enable
+# Network Admin > Themes > Krys > Network Enable
 ```
 
 ### Per-Site Activation
 
 ```bash
 # Activate for specific site
-wp theme activate marcia --url=site1.example.com
+wp theme activate krys --url=site1.example.com
 ```
 
 ---
@@ -634,8 +634,8 @@ wp theme activate marcia --url=site1.example.com
 - **Documentation**: [README.md](README.md)
 - **Testing Guide**: [TESTING.md](TESTING.md)
 - **Changelog**: [CHANGELOG.md](CHANGELOG.md)
-- **Support Forum**: [wordpress.org/support/theme/marcia](https://wordpress.org/support/theme/marcia)
-- **GitHub**: [github.com/Zeus-Eternal/Krys](https://github.com/Zeus-Eternal/Krys)
+- **Support Forum**: [wordpress.org/support/theme/krys](https://wordpress.org/support/theme/krys)
+- **GitHub**: [github.com/agustealo/Krys](https://github.com/agustealo/Krys)
 
 ### Getting Help
 

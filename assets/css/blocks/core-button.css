@@ -3,7 +3,7 @@
  *
  * Custom styles for the core/button block.
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 
@@ -23,19 +23,19 @@
 }
 
 /* Outline button style */
-.is-style-marcia-outline .wp-block-button__link {
+.is-style-krys-outline .wp-block-button__link {
 	background-color: transparent !important;
 	border: 2px solid currentColor;
 	color: var(--wp--preset--color--primary) !important;
 }
 
-.is-style-marcia-outline .wp-block-button__link:hover {
+.is-style-krys-outline .wp-block-button__link:hover {
 	background-color: var(--wp--preset--color--primary) !important;
 	color: var(--wp--preset--color--base) !important;
 }
 
 /* Ghost button style */
-.is-style-marcia-ghost .wp-block-button__link {
+.is-style-krys-ghost .wp-block-button__link {
 	background-color: transparent !important;
 	border: none;
 	color: var(--wp--preset--color--primary) !important;
@@ -43,7 +43,7 @@
 	padding: 0.5rem 1rem;
 }
 
-.is-style-marcia-ghost .wp-block-button__link:hover {
+.is-style-krys-ghost .wp-block-button__link:hover {
 	color: var(--wp--preset--color--secondary) !important;
 	transform: none;
 	box-shadow: none;

@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Blog Post Hero
- * Slug: marcia/blog-single-hero
- * Categories: marcia-blog
+ * Slug: krys/blog-single-hero
+ * Categories: krys-blog
  * Description: Large hero section for single blog posts
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>

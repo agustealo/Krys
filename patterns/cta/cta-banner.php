@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: CTA Banner
- * Slug: marcia/cta-banner
- * Categories: marcia-cta
+ * Slug: krys/cta-banner
+ * Categories: krys-cta
  * Description: Compact call-to-action banner with inline button
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -16,11 +16,11 @@
 		<!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem"}},"layout":{"type":"flex","orientation":"vertical"}} -->
 		<div class="wp-block-group">
 			<!-- wp:heading {"level":3,"fontSize":"large"} -->
-			<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Start building today', 'marcia' ); ?></h3>
+			<h3 class="wp-block-heading has-large-font-size"><?php esc_html_e( 'Start building today', 'krys' ); ?></h3>
 			<!-- /wp:heading -->
 
 			<!-- wp:paragraph -->
-			<p><?php esc_html_e( 'Join 50,000+ teams already using our platform', 'marcia' ); ?></p>
+			<p><?php esc_html_e( 'Join 50,000+ teams already using our platform', 'krys' ); ?></p>
 			<!-- /wp:paragraph -->
 		</div>
 		<!-- /wp:group -->
@@ -28,7 +28,7 @@
 		<!-- wp:buttons -->
 		<div class="wp-block-buttons">
 			<!-- wp:button {"backgroundColor":"base","textColor":"contrast"} -->
-			<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button"><?php esc_html_e( 'Get Started →', 'marcia' ); ?></a></div>
+			<div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button"><?php esc_html_e( 'Get Started →', 'krys' ); ?></a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

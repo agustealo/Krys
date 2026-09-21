@@ -1,11 +1,11 @@
 <?php
 /**
  * Title: Featured Post
- * Slug: marcia/blog-featured
- * Categories: marcia-blog
+ * Slug: krys/blog-featured
+ * Categories: krys-blog
  * Description: Large featured blog post with image and excerpt
  *
- * @package Marcia
+ * @package Krys
  * @since 2.0.0
  */
 ?>
@@ -18,7 +18,7 @@
 			<div class="wp-block-columns are-vertically-aligned-center">
 				<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->
 				<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:50%">
-					<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"0.5rem"}},"className":"is-style-marcia-shadow"} /-->
+					<!-- wp:post-featured-image {"isLink":true,"aspectRatio":"4/3","style":{"border":{"radius":"0.5rem"}},"className":"is-style-krys-shadow"} /-->
 				</div>
 				<!-- /wp:column -->
 
@@ -27,7 +27,7 @@
 					<!-- wp:group {"style":{"spacing":{"padding":{"top":"0.25rem","right":"0.75rem","bottom":"0.25rem","left":"0.75rem"},"margin":{"bottom":"var:preset|spacing|40"}},"border":{"radius":"0.25rem"}},"backgroundColor":"primary","textColor":"base","layout":{"type":"constrained"}} -->
 					<div class="wp-block-group has-base-color has-primary-background-color has-text-color has-background" style="border-radius:0.25rem;margin-bottom:var(--wp--preset--spacing--40);padding-top:0.25rem;padding-right:0.75rem;padding-bottom:0.25rem;padding-left:0.75rem">
 						<!-- wp:paragraph {"fontSize":"small"} -->
-						<p class="has-small-font-size"><?php esc_html_e( 'FEATURED', 'marcia' ); ?></p>
+						<p class="has-small-font-size"><?php esc_html_e( 'FEATURED', 'krys' ); ?></p>
 						<!-- /wp:paragraph -->
 					</div>
 					<!-- /wp:group -->
@@ -41,12 +41,12 @@
 					</div>
 					<!-- /wp:group -->
 
-					<!-- wp:post-excerpt {"moreText":"<?php esc_attr_e( 'Continue Reading', 'marcia' ); ?>","excerptLength":30,"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} /-->
+					<!-- wp:post-excerpt {"moreText":"<?php esc_attr_e( 'Continue Reading', 'krys' ); ?>","excerptLength":30,"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} /-->
 
 					<!-- wp:buttons {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40"}}}} -->
 					<div class="wp-block-buttons" style="margin-top:var(--wp--preset--spacing--40)">
 						<!-- wp:button -->
-						<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read Full Article', 'marcia' ); ?></a></div>
+						<div class="wp-block-button"><a class="wp-block-button__link wp-element-button"><?php esc_html_e( 'Read Full Article', 'krys' ); ?></a></div>
 						<!-- /wp:button -->
 					</div>
 					<!-- /wp:buttons -->

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the Marcia theme will be documented in this file.
+All notable changes to the Krys theme will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -50,14 +50,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - All legacy code from previous versions
 - jQuery dependency
 - Classic theme support
-- Backward compatibility with old Marcia versions
+- Backward compatibility with old Krys versions
 
 ---
 
 ## Version History
 
 ### Version 2.0.0 - Complete Rebuild
-This is a complete rewrite of the Marcia theme, built from the ground up using 2025 WordPress standards. It is not backward compatible with previous versions.
+This is a complete rewrite of the Krys theme, built from the ground up using 2025 WordPress standards. It is not backward compatible with previous versions.
 
 **Key Features:**
 - Full Site Editing (Block Theme)
@@ -90,14 +90,14 @@ We follow [Semantic Versioning](https://semver.org/):
 ## Support
 
 For support, please visit:
-- [WordPress.org Support Forum](https://wordpress.org/support/theme/marcia)
-- [GitHub Issues](https://github.com/Zeus-Eternal/Krys/issues)
+- [WordPress.org Support Forum](https://wordpress.org/support/theme/krys)
+- [GitHub Issues](https://github.com/agustealo/Krys/issues)
 
 ---
 
 ## Credits
 
-Marcia Theme is developed and maintained by the Marcia Theme team.
+Krys Theme is developed and maintained by the Krys Theme team.
 
 ### Contributors
 - Theme architecture and development
@@ -108,5 +108,5 @@ Marcia Theme is developed and maintained by the Marcia Theme team.
 
 ---
 
-[Unreleased]: https://github.com/Zeus-Eternal/Krys/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/Zeus-Eternal/Krys/releases/tag/v2.0.0
+[Unreleased]: https://github.com/agustealo/Krys/compare/v2.0.0...HEAD
+[2.0.0]: https://github.com/agustealo/Krys/releases/tag/v2.0.0

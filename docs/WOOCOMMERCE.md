@@ -1,6 +1,6 @@
 # WooCommerce Integration Guide
 
-Complete guide for using Marcia Theme with WooCommerce.
+Complete guide for using Krys Theme with WooCommerce.
 
 ## Table of Contents
 
@@ -15,7 +15,7 @@ Complete guide for using Marcia Theme with WooCommerce.
 
 ## Overview
 
-Marcia Theme includes complete WooCommerce integration with:
+Krys Theme includes complete WooCommerce integration with:
 
 - ✅ Custom block-based templates
 - ✅ 8+ shop-specific patterns
@@ -62,7 +62,7 @@ Configure:
 - Shipping zones
 - Tax settings
 
-### 3. Enable Marcia WooCommerce Features
+### 3. Enable Krys WooCommerce Features
 
 The theme automatically:
 - Enables WooCommerce support
@@ -132,7 +132,7 @@ The theme automatically:
 
 ### Available Patterns
 
-#### 1. Shop Hero (`marcia/shop-hero`)
+#### 1. Shop Hero (`krys/shop-hero`)
 
 Eye-catching shop homepage hero with gradient background.
 
@@ -146,7 +146,7 @@ Insert Pattern > Shop > Shop Hero
 - Update text: Click and edit headings
 - Modify buttons: Edit button links
 
-#### 2. Shop Categories (`marcia/shop-categories`)
+#### 2. Shop Categories (`krys/shop-categories`)
 
 Product category showcase with images.
 
@@ -160,7 +160,7 @@ Insert Pattern > Shop > Shop Categories
 - Shop landing page
 - Category overview page
 
-#### 3. Featured Products (`marcia/shop-featured-products`)
+#### 3. Featured Products (`krys/shop-featured-products`)
 
 Showcase featured products in grid layout.
 
@@ -174,7 +174,7 @@ Insert Pattern > Shop > Featured Products
 - Change columns: Edit `displayLayout` > `columns`
 - Filter by category: Add `taxQuery` filter
 
-#### 4. Sale Banner (`marcia/shop-sale-banner`)
+#### 4. Sale Banner (`krys/shop-sale-banner`)
 
 Promotional banner for sales and special offers.
 
@@ -188,7 +188,7 @@ Insert Pattern > Shop > Sale Banner
 - Update colors: Select background color
 - Add countdown: Insert countdown block
 
-#### 5. Shop Newsletter (`marcia/shop-newsletter`)
+#### 5. Shop Newsletter (`krys/shop-newsletter`)
 
 Newsletter signup with discount offer.
 
@@ -202,7 +202,7 @@ Insert Pattern > Shop > Shop Newsletter
 - Use Contact Form 7
 - Add custom form plugin
 
-#### 6. Trust Badges (`marcia/shop-trust-badges`)
+#### 6. Trust Badges (`krys/shop-trust-badges`)
 
 Build customer confidence with trust indicators.
 
@@ -217,7 +217,7 @@ Insert Pattern > Shop > Trust Badges
 - Checkout page
 - Cart page
 
-#### 7. New Arrivals (`marcia/shop-new-arrivals`)
+#### 7. New Arrivals (`krys/shop-new-arrivals`)
 
 Showcase latest products.
 
@@ -230,7 +230,7 @@ Insert Pattern > Shop > New Arrivals
 - Automatically shows newest products
 - Updates based on `orderBy: date`
 
-#### 8. On Sale Products (`marcia/shop-on-sale`)
+#### 8. On Sale Products (`krys/shop-on-sale`)
 
 Highlight products currently on sale.
 
@@ -412,7 +412,7 @@ wp config set WP_SITEURL 'https://yoursite.com'
 Keep updated:
 - WordPress core
 - WooCommerce plugin
-- Marcia theme
+- Krys theme
 - Payment gateway plugins
 
 #### 3. Strong Passwords
@@ -479,7 +479,7 @@ View logs: **WooCommerce > Status > Logs**
 
 **Resources:**
 - [WooCommerce Documentation](https://woocommerce.com/documentation/)
-- [Marcia Support Forum](https://wordpress.org/support/theme/marcia)
+- [Krys Support Forum](https://wordpress.org/support/theme/krys)
 - [WooCommerce Community](https://woocommerce.com/community/)
 
 **Support Channels:**
@@ -507,8 +507,8 @@ Create new pattern:
 <?php
 /**
  * Title: Custom Shop Pattern
- * Slug: marcia/custom-shop
- * Categories: marcia-shop
+ * Slug: krys/custom-shop
+ * Categories: krys-shop
  */
 ?>
 <!-- Your blocks here -->
@@ -550,4 +550,4 @@ add_action( 'woocommerce_after_single_product', 'your_function' );
 **Theme Version:** 2.0.0
 **WooCommerce Version:** 9.0+
 
-For more help, visit our [support forum](https://wordpress.org/support/theme/marcia).
+For more help, visit our [support forum](https://wordpress.org/support/theme/krys).

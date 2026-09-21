@@ -1,5 +1,5 @@
-=== Marcia ===
-Contributors: marciatheme
+=== Krys ===
+Contributors: krystheme
 Requires at least: 6.6
 Tested up to: 6.7
 Requires PHP: 8.0
@@ -11,7 +11,7 @@ A modern WordPress block theme built for 2025 standards with performance-first a
 
 == Description ==
 
-Marcia is a next-generation WordPress block theme designed for performance, flexibility, and modern web standards. Built entirely with Full Site Editing (FSE), Marcia offers a comprehensive design system, 50+ block patterns, and seamless WooCommerce integration.
+Krys is a next-generation WordPress block theme designed for performance, flexibility, and modern web standards. Built entirely with Full Site Editing (FSE), Krys offers a comprehensive design system, 50+ block patterns, and seamless WooCommerce integration.
 
 = Key Features =
 
@@ -91,19 +91,19 @@ Marcia is a next-generation WordPress block theme designed for performance, flex
 
 = Manual Installation =
 
-1. Upload the `marcia` folder to the `/wp-content/themes/` directory
+1. Upload the `krys` folder to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance > Themes' menu in WordPress
 3. Visit the Site Editor (Appearance > Editor) to customize your site
 
 == Frequently Asked Questions ==
 
-= Is Marcia a block theme? =
+= Is Krys a block theme? =
 
-Yes! Marcia is a 100% block theme (Full Site Editing). All customization is done through the WordPress Site Editor.
+Yes! Krys is a 100% block theme (Full Site Editing). All customization is done through the WordPress Site Editor.
 
-= Does Marcia work with WooCommerce? =
+= Does Krys work with WooCommerce? =
 
-Absolutely! Marcia includes complete WooCommerce integration with custom block templates for shop pages, product pages, cart, and checkout.
+Absolutely! Krys includes complete WooCommerce integration with custom block templates for shop pages, product pages, cart, and checkout.
 
 = Can I customize the colors and fonts? =
 
@@ -111,27 +111,27 @@ Yes! You can customize all colors, fonts, spacing, and more through the Site Edi
 
 = Do I need a page builder? =
 
-No! Marcia uses WordPress's native block editor. No additional page builder plugins are needed.
+No! Krys uses WordPress's native block editor. No additional page builder plugins are needed.
 
-= Is Marcia accessible? =
+= Is Krys accessible? =
 
-Yes! Marcia is built to WCAG 2.2 AA standards with full keyboard navigation, screen reader support, and proper color contrast.
+Yes! Krys is built to WCAG 2.2 AA standards with full keyboard navigation, screen reader support, and proper color contrast.
 
 = How do I use the block patterns? =
 
-In the block editor, click the "+" button and select "Patterns". You'll find all Marcia patterns organized by category.
+In the block editor, click the "+" button and select "Patterns". You'll find all Krys patterns organized by category.
 
-= Can I use Marcia for e-commerce? =
+= Can I use Krys for e-commerce? =
 
-Yes! Marcia is optimized for WooCommerce with custom shop patterns, product templates, and e-commerce focused designs.
+Yes! Krys is optimized for WooCommerce with custom shop patterns, product templates, and e-commerce focused designs.
 
-= Will Marcia slow down my site? =
+= Will Krys slow down my site? =
 
-No! Marcia is built for performance with optimized assets, lazy loading, and minimal JavaScript. It scores 90+ on PageSpeed.
+No! Krys is built for performance with optimized assets, lazy loading, and minimal JavaScript. It scores 90+ on PageSpeed.
 
-= Is Marcia translation ready? =
+= Is Krys translation ready? =
 
-Yes! Marcia is fully translation ready and RTL language support is included.
+Yes! Krys is fully translation ready and RTL language support is included.
 
 = Where can I get support? =
 
@@ -153,7 +153,7 @@ Visit the WordPress.org support forum or check our documentation site for guides
 == Upgrade Notice ==
 
 = 2.0.0 =
-Initial release of Marcia 2025. This is a complete rewrite - not compatible with previous versions.
+Initial release of Krys 2025. This is a complete rewrite - not compatible with previous versions.
 
 == Credits ==
 
@@ -163,15 +163,15 @@ Initial release of Marcia 2025. This is a complete rewrite - not compatible with
 
 == Resources ==
 
-* Demo: https://demo.marcia-theme.example
-* Documentation: https://docs.marcia-theme.example
-* Support: https://wordpress.org/support/theme/marcia
-* GitHub: https://github.com/Zeus-Eternal/Krys
+* Demo: https://demo.krys-theme.example
+* Documentation: https://docs.krys-theme.example
+* Support: https://wordpress.org/support/theme/krys
+* GitHub: https://github.com/agustealo/Krys
 
 == Copyright ==
 
-Marcia Theme, Copyright 2025 Marcia Theme
-Marcia is distributed under the terms of the GNU GPL v2 or later.
+Krys Theme, Copyright 2025 Krys Theme
+Krys is distributed under the terms of the GNU GPL v2 or later.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

@@ -1,10 +1,10 @@
-# Marcia Theme Translations
+# Krys Theme Translations
 
-This directory contains translation files for the Marcia theme.
+This directory contains translation files for the Krys theme.
 
 ## Translation Files
 
-- `marcia.pot` - Translation template file (will be generated)
+- `krys.pot` - Translation template file (will be generated)
 - Language-specific `.po` and `.mo` files
 
 ## How to Translate
@@ -14,8 +14,8 @@ This directory contains translation files for the Marcia theme.
 1. **Download the .pot file** from this directory
 2. **Use a translation tool** like [Poedit](https://poedit.net/)
 3. **Create a new translation** from the .pot template
-4. **Save your translation** as `marcia-{locale}.po` and `marcia-{locale}.mo`
-   - Examples: `marcia-es_ES.po`, `marcia-fr_FR.po`, `marcia-de_DE.po`
+4. **Save your translation** as `krys-{locale}.po` and `krys-{locale}.mo`
+   - Examples: `krys-es_ES.po`, `krys-fr_FR.po`, `krys-de_DE.po`
 5. **Submit your translation** via pull request or contact us
 
 ### Translation Tools
@@ -31,7 +31,7 @@ Currently available translations:
 
 ## Translation Status
 
-Help us translate Marcia into your language!
+Help us translate Krys into your language!
 
 | Language | Status | Contributors |
 |----------|--------|--------------|
@@ -54,7 +54,7 @@ For developers:
 
 ```bash
 # Using WP-CLI
-wp i18n make-pot . languages/marcia.pot
+wp i18n make-pot . languages/krys.pot
 
 # Or using npm script (if configured)
 npm run makepot
@@ -62,19 +62,19 @@ npm run makepot
 
 ## Text Domain
 
-All translatable strings use the `marcia` text domain:
+All translatable strings use the `krys` text domain:
 
 ```php
-__( 'Translatable text', 'marcia' )
-esc_html__( 'Translatable text', 'marcia' )
-esc_attr__( 'Translatable text', 'marcia' )
-_e( 'Translatable text', 'marcia' )
-esc_html_e( 'Translatable text', 'marcia' )
+__( 'Translatable text', 'krys' )
+esc_html__( 'Translatable text', 'krys' )
+esc_attr__( 'Translatable text', 'krys' )
+_e( 'Translatable text', 'krys' )
+esc_html_e( 'Translatable text', 'krys' )
 ```
 
 ## RTL Languages
 
-Marcia includes RTL (Right-to-Left) language support for:
+Krys includes RTL (Right-to-Left) language support for:
 - Arabic
 - Hebrew
 - Persian
@@ -83,9 +83,9 @@ Marcia includes RTL (Right-to-Left) language support for:
 
 ## Questions?
 
-If you have questions about translating Marcia:
-- Open an [issue](https://github.com/Zeus-Eternal/Krys/issues)
-- Contact us via the [support forum](https://wordpress.org/support/theme/marcia)
+If you have questions about translating Krys:
+- Open an [issue](https://github.com/agustealo/Krys/issues)
+- Contact us via the [support forum](https://wordpress.org/support/theme/krys)
 
 ## Credits
 
