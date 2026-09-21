@@ -7,8 +7,6 @@
  * @package Marcia
  */
 
-declare( strict_types=1 );
-
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 1 );
 }
@@ -21,9 +19,6 @@ update_option( 'blogname', 'Marcia Studio' );
 update_option( 'blogdescription', 'Native WordPress design, polished for real storefronts.' );
 update_option( 'permalink_structure', '/%postname%/' );
 
-/**
- * Create or update a published page by slug.
- */
 function marcia_docs_upsert_page( string $title, string $slug, string $content ): int {
 	$page = get_page_by_path( $slug, OBJECT, 'page' );
 	$args = array(
@@ -72,9 +67,9 @@ $home_content = <<<'HTML'
 <div class="wp-block-group alignfull has-gray-50-background-color has-background" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)"><!-- wp:columns --><div class="wp-block-columns"><!-- wp:column --><div class="wp-block-column"><!-- wp:heading {"textAlign":"center","fontSize":"x-large"} --><h2 class="wp-block-heading has-text-align-center has-x-large-font-size">6</h2><!-- /wp:heading --><!-- wp:paragraph {"align":"center"} --><p class="has-text-align-center">style variations</p><!-- /wp:paragraph --></div><!-- /wp:column --><!-- wp:column --><div class="wp-block-column"><!-- wp:heading {"textAlign":"center","fontSize":"x-large"} --><h2 class="wp-block-heading has-text-align-center has-x-large-font-size">100%</h2><!-- /wp:heading --><!-- wp:paragraph {"align":"center"} --><p class="has-text-align-center">block-theme workflow</p><!-- /wp:paragraph --></div><!-- /wp:column --><!-- wp:column --><div class="wp-block-column"><!-- wp:heading {"textAlign":"center","fontSize":"x-large"} --><h2 class="wp-block-heading has-text-align-center has-x-large-font-size">1</h2><!-- /wp:heading --><!-- wp:paragraph {"align":"center"} --><p class="has-text-align-center">canonical design system</p><!-- /wp:paragraph --></div><!-- /wp:column --></div><!-- /wp:columns --></div><!-- /wp:group -->
 HTML;
 
-$home_id = marcia_docs_upsert_page( 'Home', 'home', $home_content );
-$shop_id = marcia_docs_upsert_page( 'Shop', 'shop', '<!-- wp:paragraph --><p>Browse the Marcia demo catalog.</p><!-- /wp:paragraph -->' );
-$cart_id = marcia_docs_upsert_page( 'Cart', 'cart', '<!-- wp:woocommerce/cart /-->' );
+$home_id     = marcia_docs_upsert_page( 'Home', 'home', $home_content );
+$shop_id     = marcia_docs_upsert_page( 'Shop', 'shop', '<!-- wp:paragraph --><p>Browse the Marcia demo catalog.</p><!-- /wp:paragraph -->' );
+$cart_id     = marcia_docs_upsert_page( 'Cart', 'cart', '<!-- wp:woocommerce/cart /-->' );
 $checkout_id = marcia_docs_upsert_page( 'Checkout', 'checkout', '<!-- wp:woocommerce/checkout /-->' );
 
 update_option( 'show_on_front', 'page' );
@@ -85,18 +80,13 @@ update_option( 'woocommerce_checkout_page_id', $checkout_id );
 
 require_once ABSPATH . 'wp-admin/includes/image.php';
 
-/**
- * Generate a simple local PNG for a demo product and attach it to WordPress.
- */
 function marcia_docs_product_image( int $index, string $name ): int {
 	$uploads = wp_upload_dir();
 	if ( ! empty( $uploads['error'] ) ) {
 		throw new RuntimeException( (string) $uploads['error'] );
 	}
 
-	$width  = 1200;
-	$height = 900;
-	$image  = imagecreatetruecolor( $width, $height );
+	$image = imagecreatetruecolor( 1200, 900 );
 	$palettes = array(
 		array( 0, 95, 143 ),
 		array( 184, 74, 0 ),
@@ -105,7 +95,7 @@ function marcia_docs_product_image( int $index, string $name ): int {
 		array( 55, 65, 81 ),
 		array( 107, 39, 217 ),
 	);
-	$rgb = $palettes[ ( $index - 1 ) % count( $palettes ) ];
+	$rgb        = $palettes[ ( $index - 1 ) % count( $palettes ) ];
 	$background = imagecolorallocate( $image, $rgb[0], $rgb[1], $rgb[2] );
 	$light      = imagecolorallocate( $image, 255, 255, 255 );
 	$soft       = imagecolorallocate( $image, 235, 239, 245 );
@@ -150,8 +140,15 @@ $products = array(
 $first_product_id = 0;
 foreach ( $products as $index => $product_data ) {
 	list( $name, $price ) = $product_data;
-	$existing = get_page_by_title( $name, OBJECT, 'product' );
-	$product  = $existing instanceof WP_Post ? wc_get_product( $existing->ID ) : new WC_Product_Simple();
+	$existing = get_posts(
+		array(
+			'post_type'      => 'product',
+			'post_status'    => 'any',
+			'title'          => $name,
+			'posts_per_page' => 1,
+		)
+	);
+	$product = ! empty( $existing ) ? wc_get_product( $existing[0]->ID ) : new WC_Product_Simple();
 	if ( ! $product instanceof WC_Product_Simple ) {
 		$product = new WC_Product_Simple();
 	}
