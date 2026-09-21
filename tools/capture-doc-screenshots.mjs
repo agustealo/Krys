@@ -81,22 +81,43 @@ await Promise.all([
 await settle(loginPage);
 await loginPage.close();
 
-async function captureAdmin(route, filename, delay = 1500) {
+async function openAdmin(route, delay = 1500) {
   const page = await admin.newPage();
   await page.goto(`${baseUrl}${route}`, { waitUntil: 'domcontentloaded' });
   await settle(page, delay);
   if (page.url().includes('wp-login.php')) {
     throw new Error(`Admin authentication was lost while opening ${route}.`);
   }
+  return page;
+}
+
+async function saveAdmin(page, filename) {
   await page.screenshot({ path: path.join(outputDir, filename), fullPage: false });
   await page.close();
 }
 
-await captureAdmin('/wp-admin/site-editor.php', 'marcia-admin-site-editor.png');
-await captureAdmin('/wp-admin/site-editor.php?path=/wp_global_styles', 'marcia-admin-styles.png');
-await captureAdmin('/wp-admin/site-editor.php?path=/wp_template', 'marcia-admin-templates.png');
-await captureAdmin('/wp-admin/site-editor.php?path=/patterns', 'marcia-admin-patterns.png');
-await captureAdmin('/wp-admin/site-editor.php?p=%2Fwp_template%2Fmarcia%2F%2Ffront-page&canvas=edit', 'marcia-admin-front-page-editor.png', 2200);
+let page = await openAdmin('/wp-admin/site-editor.php');
+await saveAdmin(page, 'marcia-admin-site-editor.png');
+
+page = await openAdmin('/wp-admin/site-editor.php?path=/wp_global_styles');
+await saveAdmin(page, 'marcia-admin-styles.png');
+
+page = await openAdmin('/wp-admin/site-editor.php?path=/wp_global_styles');
+const browseStyles = page.getByText('Browse styles', { exact: true }).first();
+await browseStyles.waitFor({ state: 'visible', timeout: 10000 });
+await browseStyles.click();
+await settle(page, 1200);
+await saveAdmin(page, 'marcia-admin-style-variations.png');
+
+page = await openAdmin('/wp-admin/site-editor.php?path=/wp_template');
+await saveAdmin(page, 'marcia-admin-templates.png');
+
+page = await openAdmin('/wp-admin/site-editor.php?path=/patterns');
+const heroCategory = page.getByText('Hero Sections', { exact: true }).first();
+await heroCategory.waitFor({ state: 'visible', timeout: 10000 });
+await heroCategory.click();
+await settle(page, 1200);
+await saveAdmin(page, 'marcia-admin-patterns.png');
 
 const pagesResponse = await admin.request.get(`${baseUrl}/wp-json/wp/v2/pages?slug=home`);
 if (!pagesResponse.ok()) {
@@ -106,7 +127,19 @@ const pages = await pagesResponse.json();
 if (!Array.isArray(pages) || !pages[0]?.id) {
   throw new Error('The Home page fixture was not available for editor capture.');
 }
-await captureAdmin(`/wp-admin/post.php?post=${pages[0].id}&action=edit`, 'marcia-admin-page-editor.png', 2200);
+
+page = await openAdmin(`/wp-admin/post.php?post=${pages[0].id}&action=edit`, 2200);
+const welcomeDialog = page.getByRole('dialog').filter({ hasText: /welcome to the editor/i }).first();
+if (await welcomeDialog.isVisible().catch(() => false)) {
+  const closeButton = welcomeDialog.getByRole('button', { name: /close/i }).first();
+  if (await closeButton.isVisible().catch(() => false)) {
+    await closeButton.click();
+  } else {
+    await page.keyboard.press('Escape');
+  }
+  await settle(page, 700);
+}
+await saveAdmin(page, 'marcia-admin-page-editor.png');
 
 await admin.close();
 await browser.close();
