@@ -103,7 +103,7 @@ foreach ( $pattern_files as $pattern_file ) {
 
 	preg_match_all( '#/assets/[A-Za-z0-9_./-]+#', $content, $asset_matches );
 	foreach ( array_unique( $asset_matches[0] ?? array() ) as $asset_ref ) {
-		$asset_ref = rtrim( $asset_ref, '\"\' );
+		$asset_ref = rtrim( $asset_ref, "\"'" );
 		if ( ! is_file( $root . $asset_ref ) ) {
 			$fail( $relative . ' references missing asset ' . $asset_ref );
 		}
