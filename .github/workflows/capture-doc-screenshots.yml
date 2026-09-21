@@ -1,0 +1,102 @@
+name: Capture documentation screenshots
+
+on:
+  push:
+    branches:
+      - docs/runtime-screenshots
+    paths:
+      - '.github/workflows/capture-doc-screenshots.yml'
+      - 'tools/setup-screenshot-demo.php'
+      - 'tools/capture-doc-screenshots.mjs'
+      - 'functions.php'
+      - 'theme.json'
+      - 'inc/**'
+      - 'parts/**'
+      - 'templates/**'
+      - 'assets/css/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  capture:
+    name: Live WordPress / WooCommerce screenshots
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8.4
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: wordpress
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping -h 127.0.0.1 -proot"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mysqli, zip, gd
+          tools: wp-cli
+          coverage: none
+      - name: Install live demo fixture
+        env:
+          WP_PATH: /tmp/wordpress
+        run: |
+          wp core download --version=7.1.1 --path="$WP_PATH" --force
+          wp config create --path="$WP_PATH" --dbname=wordpress --dbuser=root --dbpass=root --dbhost=127.0.0.1:3306 --skip-check
+          wp core install --path="$WP_PATH" --url=http://127.0.0.1:8080 --title='Marcia Demo' --admin_user=admin --admin_password='docs-capture-only' --admin_email=docs@example.invalid --skip-email
+          mkdir -p "$WP_PATH/wp-content/themes/marcia"
+          rsync -a --delete --exclude='.git' --exclude='dist' --exclude='node_modules' "$GITHUB_WORKSPACE/" "$WP_PATH/wp-content/themes/marcia/"
+          wp theme activate marcia --path="$WP_PATH"
+          wp plugin install woocommerce --activate --path="$WP_PATH"
+          wp eval-file "$GITHUB_WORKSPACE/tools/setup-screenshot-demo.php" --path="$WP_PATH"
+      - name: Start WordPress
+        env:
+          WP_PATH: /tmp/wordpress
+        run: |
+          wp server --host=127.0.0.1 --port=8080 --path="$WP_PATH" >/tmp/marcia-doc-server.log 2>&1 &
+          echo $! >/tmp/marcia-doc-server.pid
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:8080/ >/dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/marcia-doc-server.log
+          exit 1
+      - name: Install browser
+        run: |
+          npm install --no-save --no-package-lock playwright@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Capture real runtime screens
+        env:
+          BASE_URL: http://127.0.0.1:8080
+        run: |
+          rm -rf docs/images
+          mkdir -p docs/images
+          export DEMO_PRODUCT_ID="$(cat /tmp/marcia-demo-product-id)"
+          node tools/capture-doc-screenshots.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: marcia-runtime-screenshots
+          path: docs/images/*.png
+          if-no-files-found: error
+      - name: Commit generated screenshots
+        run: |
+          git add -A docs/images
+          if git diff --cached --quiet; then
+            echo 'Screenshots are unchanged.'
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'docs: capture live Marcia runtime screenshots [skip ci]'
+          git push origin HEAD:${{ github.ref_name }}
