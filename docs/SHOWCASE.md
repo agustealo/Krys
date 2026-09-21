@@ -1,12 +1,12 @@
 # Marcia runtime showcase
 
-These screenshots are generated from a real temporary WordPress 7.1.1 + WooCommerce installation running the current Marcia branch. The fixture creates normal WordPress pages, real WooCommerce products, local generated product media, a real cart session, and the theme's production templates/styles. It does not inject screenshot-only CSS into Marcia or ship demo data with the theme.
+These screenshots are generated from a real temporary WordPress 7.1.1 + WooCommerce installation running the current Marcia branch. The fixture creates normal WordPress pages, real WooCommerce products, local generated product media, and an actual browser add-to-cart action. It does not inject screenshot-only CSS into Marcia or ship demo data with the theme.
 
 ## Homepage
 
 ![Marcia homepage on desktop](images/marcia-home-desktop.png)
 
-The homepage demonstrates the production `theme.json` palette, typography, spacing, button styles, cards, full-width groups, header, and footer on ordinary WordPress block content.
+The homepage demonstrates the production `theme.json` palette, typography, spacing, button styles, cards, header, navigation, and footer on ordinary WordPress block content. A fixture-only Site Editor template removes the generic page-title wrapper so the screenshot reflects a normal purpose-built homepage rather than a documentation artifact.
 
 ## Shop in action
 
@@ -14,17 +14,17 @@ The homepage demonstrates the production `theme.json` palette, typography, spaci
 
 The shop screenshot is the real WooCommerce product archive rendered through `templates/archive-product.html`. Product data and product media are generated only inside the documentation fixture.
 
-## Cart in action
+## Product page
 
-![Marcia WooCommerce cart with a product](images/marcia-cart-desktop.png)
+![Marcia WooCommerce product page](images/marcia-product-desktop.png)
 
-Before this image is captured, the browser adds a real WooCommerce product to the cart and then opens the assigned Cart page. The theme still delegates cart behavior and session ownership to WooCommerce.
+The product view is rendered through Marcia's production `templates/single-product.html` and WooCommerce's real product blocks and product data.
 
-## Checkout in action
+## Add to cart in action
 
-![Marcia WooCommerce checkout](images/marcia-checkout-desktop.png)
+![Marcia WooCommerce product after a real add-to-cart action](images/marcia-add-to-cart-desktop.png)
 
-Checkout uses the assigned WordPress Checkout page through Marcia's `woocommerce/page-content-wrapper` + `core/post-content` template contract rather than a duplicated theme-owned checkout flow.
+The browser opens the real product page, clicks the WooCommerce **Add to cart** button, waits for WooCommerce's success notice, and only then captures this image. The screenshot is therefore evidence of the live interaction rather than a staged success message.
 
 ## Mobile viewport
 

@@ -6,15 +6,15 @@ Marcia is a WordPress block theme maintained in the `agustealo/Krys` repository.
 
 ![Marcia homepage running on WordPress](docs/images/marcia-home-desktop.png)
 
-These images are captured from a real temporary WordPress 7.1.1 + WooCommerce runtime, not a design mockup. The fixture uses the production theme files and real WooCommerce product/cart behavior while keeping demo data out of the shipped theme.
+These images are captured from a real temporary WordPress 7.1.1 + WooCommerce runtime, not a design mockup. The fixture uses the production theme files, real WooCommerce products, and an actual browser add-to-cart action while keeping all demo data out of the shipped theme.
 
-| WooCommerce shop | Cart in action |
+| WooCommerce shop | Product page |
 | --- | --- |
-| ![Marcia WooCommerce shop](docs/images/marcia-shop-desktop.png) | ![Marcia WooCommerce cart](docs/images/marcia-cart-desktop.png) |
+| ![Marcia WooCommerce shop](docs/images/marcia-shop-desktop.png) | ![Marcia WooCommerce product page](docs/images/marcia-product-desktop.png) |
 
-| Checkout | Mobile viewport |
+| Add to cart in action | Mobile viewport |
 | --- | --- |
-| ![Marcia WooCommerce checkout](docs/images/marcia-checkout-desktop.png) | ![Marcia homepage mobile](docs/images/marcia-home-mobile.png) |
+| ![Marcia real WooCommerce add-to-cart action](docs/images/marcia-add-to-cart-desktop.png) | ![Marcia homepage mobile](docs/images/marcia-home-mobile.png) |
 
 See [the runtime showcase](docs/SHOWCASE.md) for capture provenance and reproduction details.
 

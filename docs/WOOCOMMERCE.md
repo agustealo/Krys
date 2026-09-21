@@ -8,15 +8,15 @@ Marcia treats WooCommerce as the authority for commerce behavior. The theme prov
 
 ![Marcia WooCommerce shop running with real products](images/marcia-shop-desktop.png)
 
-### Cart session
+### Product page
 
-![Marcia WooCommerce cart after adding a real product](images/marcia-cart-desktop.png)
+![Marcia WooCommerce product page](images/marcia-product-desktop.png)
 
-### Checkout
+### Add to cart
 
-![Marcia WooCommerce checkout using the assigned checkout page](images/marcia-checkout-desktop.png)
+![Marcia after a real WooCommerce add-to-cart action](images/marcia-add-to-cart-desktop.png)
 
-The documentation capture fixture creates real WooCommerce products and a real browser cart session inside a disposable CI installation. None of that fixture data ships with the theme. See [the runtime showcase](SHOWCASE.md) for provenance and reproduction details.
+The documentation capture fixture creates real WooCommerce products and then uses a real Chromium browser session to click the product's Add to cart button. None of that fixture data ships with the theme. See [the runtime showcase](SHOWCASE.md) for provenance and reproduction details.
 
 ## Requirements
 
@@ -83,5 +83,7 @@ Automated pull-request gates prove:
 3. `current_theme_supports( 'woocommerce' )` is true.
 4. Cart and Checkout template structure passes source validation.
 5. The release ZIP is built only after those gates pass.
+
+The documentation capture additionally proves that the current product archive and single-product presentation render in a real browser and that a real WooCommerce Add to cart action completes visibly.
 
 Before a public release, also run a real test product through product page, add-to-cart, cart, checkout, account, and order flows with a test payment gateway. Record the exact WordPress, WooCommerce, Marcia, PHP, browser, and candidate commit versions used.

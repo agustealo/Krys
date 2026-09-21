@@ -10,6 +10,7 @@ if (!productId) {
   throw new Error('DEMO_PRODUCT_ID is required.');
 }
 
+await fs.rm(outputDir, { recursive: true, force: true });
 await fs.mkdir(outputDir, { recursive: true });
 
 const browser = await chromium.launch({ headless: true });
@@ -39,20 +40,19 @@ const desktop = await browser.newContext({
 
 await capture(desktop, '/', 'marcia-home-desktop.png');
 await capture(desktop, '/shop/', 'marcia-shop-desktop.png');
+await capture(desktop, '/product/arc-desk-lamp/', 'marcia-product-desktop.png');
 
-const cartPage = await desktop.newPage();
-await cartPage.goto(`${baseUrl}/?add-to-cart=${encodeURIComponent(productId)}`, { waitUntil: 'domcontentloaded' });
-await settle(cartPage);
-await cartPage.goto(`${baseUrl}/cart/`, { waitUntil: 'domcontentloaded' });
-await settle(cartPage);
-await cartPage.screenshot({ path: path.join(outputDir, 'marcia-cart-desktop.png'), fullPage: false });
-await cartPage.close();
-
-const checkoutPage = await desktop.newPage();
-await checkoutPage.goto(`${baseUrl}/checkout/`, { waitUntil: 'domcontentloaded' });
-await settle(checkoutPage);
-await checkoutPage.screenshot({ path: path.join(outputDir, 'marcia-checkout-desktop.png'), fullPage: false });
-await checkoutPage.close();
+const actionPage = await desktop.newPage();
+await actionPage.goto(`${baseUrl}/product/arc-desk-lamp/`, { waitUntil: 'domcontentloaded' });
+await settle(actionPage);
+const addToCart = actionPage.getByRole('button', { name: /add to cart/i }).first();
+await addToCart.waitFor({ state: 'visible' });
+await addToCart.click();
+await actionPage.waitForLoadState('networkidle').catch(() => {});
+await actionPage.getByText(/has been added to your cart/i).waitFor({ state: 'visible' });
+await settle(actionPage);
+await actionPage.screenshot({ path: path.join(outputDir, 'marcia-add-to-cart-desktop.png'), fullPage: false });
+await actionPage.close();
 await desktop.close();
 
 const mobile = await browser.newContext({

@@ -19,6 +19,9 @@ update_option( 'blogname', 'Marcia Studio' );
 update_option( 'blogdescription', 'Native WordPress design, polished for real storefronts.' );
 update_option( 'permalink_structure', '/%postname%/' );
 
+/**
+ * Create or update a published page by slug.
+ */
 function marcia_docs_upsert_page( string $title, string $slug, string $content ): int {
 	$page = get_page_by_path( $slug, OBJECT, 'page' );
 	$args = array(
@@ -27,6 +30,7 @@ function marcia_docs_upsert_page( string $title, string $slug, string $content )
 		'post_content' => $content,
 		'post_status'  => 'publish',
 		'post_type'    => 'page',
+		'comment_status' => 'closed',
 	);
 
 	if ( $page instanceof WP_Post ) {
@@ -43,11 +47,78 @@ function marcia_docs_upsert_page( string $title, string $slug, string $content )
 	return (int) $result;
 }
 
+/**
+ * Store a fixture-only block template or template part for the active theme.
+ */
+function marcia_docs_upsert_block_entity( string $post_type, string $slug, string $title, string $content, string $area = '' ): int {
+	$existing = get_posts(
+		array(
+			'post_type'      => $post_type,
+			'post_status'    => 'any',
+			'name'           => $slug,
+			'posts_per_page' => 1,
+		)
+	);
+
+	$args = array(
+		'post_type'    => $post_type,
+		'post_status'  => 'publish',
+		'post_name'    => $slug,
+		'post_title'   => $title,
+		'post_content' => $content,
+	);
+	if ( ! empty( $existing ) ) {
+		$args['ID'] = $existing[0]->ID;
+	}
+
+	$result = wp_insert_post( $args, true );
+	if ( is_wp_error( $result ) ) {
+		throw new RuntimeException( $result->get_error_message() );
+	}
+
+	wp_set_object_terms( (int) $result, get_stylesheet(), 'wp_theme' );
+	if ( 'wp_template_part' === $post_type && '' !== $area ) {
+		wp_set_object_terms( (int) $result, $area, 'wp_template_part_area' );
+	}
+
+	return (int) $result;
+}
+
+$sample = get_page_by_path( 'sample-page', OBJECT, 'page' );
+if ( $sample instanceof WP_Post ) {
+	wp_delete_post( $sample->ID, true );
+}
+
+$header_content = <<<'HTML'
+<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+<!-- wp:group {"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide">
+<!-- wp:group {"style":{"spacing":{"blockGap":"0"}},"layout":{"type":"flex","orientation":"vertical"}} --><div class="wp-block-group"><!-- wp:site-title {"level":0} /--><!-- wp:site-tagline /--></div><!-- /wp:group -->
+<!-- wp:navigation {"overlayMenu":"mobile","layout":{"type":"flex","justifyContent":"right"},"style":{"spacing":{"blockGap":"var:preset|spacing|50"}}} -->
+<!-- wp:navigation-link {"label":"Home","url":"/","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Shop","url":"/shop/","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Cart","url":"/cart/","kind":"custom"} /-->
+<!-- wp:navigation-link {"label":"Checkout","url":"/checkout/","kind":"custom"} /-->
+<!-- /wp:navigation -->
+</div><!-- /wp:group -->
+</div><!-- /wp:group -->
+HTML;
+
+$front_template = <<<'HTML'
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+<!-- wp:group {"tagName":"main","align":"full","layout":{"type":"default"}} --><main class="wp-block-group alignfull"><!-- wp:post-content {"align":"full","layout":{"type":"default"}} /--></main><!-- /wp:group -->
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+HTML;
+
+marcia_docs_upsert_block_entity( 'wp_template_part', 'header', 'Header', $header_content, 'header' );
+marcia_docs_upsert_block_entity( 'wp_template', 'front-page', 'Front Page', $front_template );
+
 $home_content = <<<'HTML'
 <!-- wp:group {"align":"full","gradient":"primary-gradient","textColor":"base","style":{"spacing":{"padding":{"top":"var:preset|spacing|80","right":"var:preset|spacing|50","bottom":"var:preset|spacing|80","left":"var:preset|spacing|50"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-base-color has-primary-gradient-gradient-background has-text-color has-background" style="padding-top:var(--wp--preset--spacing--80);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--80);padding-left:var(--wp--preset--spacing--50)">
 <!-- wp:paragraph {"align":"center","fontSize":"small"} --><p class="has-text-align-center has-small-font-size"><strong>WORDPRESS, WITHOUT THE PAGE-BUILDER TAX</strong></p><!-- /wp:paragraph -->
-<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"xxx-large"} --><h1 class="wp-block-heading has-text-align-center has-xxx-large-font-size">A sharper canvas for modern publishing and commerce.</h1><!-- /wp:heading -->
+<!-- wp:heading {"textAlign":"center","level":1,"fontSize":"xx-large"} --><h1 class="wp-block-heading has-text-align-center has-xx-large-font-size">A sharper canvas for modern publishing and commerce.</h1><!-- /wp:heading -->
 <!-- wp:paragraph {"align":"center","fontSize":"large"} --><p class="has-text-align-center has-large-font-size">Marcia keeps the editing experience native, the design system coherent, and WooCommerce in charge of commerce.</p><!-- /wp:paragraph -->
 <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} --><div class="wp-block-buttons"><!-- wp:button {"backgroundColor":"base","textColor":"contrast"} --><div class="wp-block-button"><a class="wp-block-button__link has-contrast-color has-base-background-color has-text-color has-background wp-element-button" href="/shop/">Browse the demo shop</a></div><!-- /wp:button --><!-- wp:button {"className":"is-style-marcia-outline"} --><div class="wp-block-button is-style-marcia-outline"><a class="wp-block-button__link wp-element-button" href="#system">Explore the design system</a></div><!-- /wp:button --></div><!-- /wp:buttons -->
 </div><!-- /wp:group -->
@@ -78,8 +149,16 @@ update_option( 'woocommerce_shop_page_id', $shop_id );
 update_option( 'woocommerce_cart_page_id', $cart_id );
 update_option( 'woocommerce_checkout_page_id', $checkout_id );
 
+$my_account_id = (int) get_option( 'woocommerce_myaccount_page_id' );
+if ( $my_account_id > 0 ) {
+	wp_update_post( array( 'ID' => $my_account_id, 'post_status' => 'draft' ) );
+}
+
 require_once ABSPATH . 'wp-admin/includes/image.php';
 
+/**
+ * Generate a simple local PNG for a demo product and attach it to WordPress.
+ */
 function marcia_docs_product_image( int $index, string $name ): int {
 	$uploads = wp_upload_dir();
 	if ( ! empty( $uploads['error'] ) ) {
@@ -158,7 +237,7 @@ foreach ( $products as $index => $product_data ) {
 	$product->set_price( $price );
 	$product->set_catalog_visibility( 'visible' );
 	$product->set_stock_status( 'instock' );
-	$product->set_description( 'A deterministic WooCommerce fixture used to prove Marcia product, cart, and checkout presentation in documentation screenshots.' );
+	$product->set_description( 'A deterministic WooCommerce fixture used to prove Marcia product and add-to-cart presentation in documentation screenshots.' );
 	$product->set_short_description( 'Clean geometry, practical details, and a storefront powered by real WooCommerce product data.' );
 	$product_id = $product->save();
 	$image_id   = marcia_docs_product_image( $index + 1, $name );
@@ -169,4 +248,5 @@ foreach ( $products as $index => $product_data ) {
 }
 
 file_put_contents( '/tmp/marcia-demo-product-id', (string) $first_product_id );
+wp_cache_flush();
 flush_rewrite_rules();

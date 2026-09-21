@@ -80,6 +80,8 @@ jobs:
         env:
           BASE_URL: http://127.0.0.1:8080
         run: |
+          rm -rf docs/images
+          mkdir -p docs/images
           export DEMO_PRODUCT_ID="$(cat /tmp/marcia-demo-product-id)"
           node tools/capture-doc-screenshots.mjs
       - uses: actions/upload-artifact@v4
@@ -89,7 +91,7 @@ jobs:
           if-no-files-found: error
       - name: Commit generated screenshots
         run: |
-          git add docs/images/*.png
+          git add -A docs/images
           if git diff --cached --quiet; then
             echo 'Screenshots are unchanged.'
             exit 0
