@@ -1,246 +1,47 @@
-# Theme Screenshot Guide
+# Theme screenshot guide
 
-## Requirements
+`screenshot.png` is a manual WordPress.org release asset. It is intentionally not generated from placeholder content or fabricated demo media.
 
-For WordPress.org theme submission, a screenshot is required:
+## WordPress.org requirements
 
-- **Filename**: `screenshot.png`
-- **Size**: 1200 x 900 pixels (4:3 aspect ratio)
-- **Format**: PNG (recommended) or JPG
-- **Location**: Theme root directory
-- **Content**: Show the theme's front-end appearance
-- **Quality**: High-resolution, clear representation
+Use a representative front-end screenshot with a 4:3 aspect ratio. Keep the image at or below 1200 × 900 pixels and place it at the theme root as `screenshot.png`.
 
-## Creating the Screenshot
+Before submission, re-check the current WordPress.org Theme Review requirements in case screenshot rules have changed.
 
-### Recommended Approach
+## Recommended capture process
 
-1. **Setup Demo Site**
-   - Install WordPress locally or on staging
-   - Activate the Marcia theme
-   - Use one of the style variations (Minimal recommended for screenshot)
+1. Install the generated Marcia release ZIP on a clean WordPress site.
+2. Build a real demo homepage from retained production patterns and/or normal WordPress blocks.
+3. Use only media you are licensed to distribute or display.
+4. Confirm the page has no broken images, placeholder links, dummy forms, lorem ipsum, fake merchant guarantees, or personal/private information.
+5. Review the page at desktop and mobile widths before selecting the screenshot composition.
+6. Capture the front-end without browser chrome.
+7. Crop/export to a 4:3 image no larger than 1200 × 900.
+8. Place the final file at `/screenshot.png`.
 
-2. **Create Homepage**
-   - Use patterns to build an attractive homepage:
-     - Add `hero-split` or `hero-gradient` pattern
-     - Add `features-cards` pattern
-     - Add `testimonials-grid` pattern
-     - Add `cta-boxed` pattern
-   - Add sample content with images
+## Suggested composition
 
-3. **Capture Screenshot**
-   - Set browser window to desktop size (1920x1080 or larger)
-   - Open homepage in browser
-   - Use screenshot tool:
-     - **Mac**: Cmd + Shift + 4
-     - **Windows**: Snipping Tool or Win + Shift + S
-     - **Browser Extension**: Full Page Screen Capture
-     - **Online Tool**: screencapture.com
+A useful screenshot demonstrates the design system rather than advertising nonexistent functionality. A simple composition can include:
 
-4. **Edit Screenshot**
-   - Open in image editor (Photoshop, GIMP, Figma, Canva)
-   - Crop to 1200 x 900 pixels
-   - Ensure high quality
-   - Save as PNG
-   - Optimize file size (recommended < 500KB)
+- the real site title/navigation;
+- a retained hero pattern such as `marcia/hero-gradient` or `marcia/hero-minimal`;
+- a retained feature or stats section;
+- a retained call-to-action section;
+- the default footer.
 
-5. **Place Screenshot**
-   ```bash
-   # Move screenshot to theme root
-   mv screenshot.png /path/to/themes/marcia/
-   ```
+Do not use deleted media-dependent patterns as screenshot fixtures.
 
-### Screenshot Content Suggestions
+## Release checklist
 
-**Include:**
-- ✅ Header with navigation
-- ✅ Hero section with compelling headline
-- ✅ 2-3 content sections showcasing patterns
-- ✅ Consistent typography and spacing
-- ✅ Good quality images
-- ✅ Brand colors prominent
+- [ ] Screenshot uses a 4:3 aspect ratio.
+- [ ] Dimensions do not exceed 1200 × 900.
+- [ ] File is named `screenshot.png` at the theme root.
+- [ ] Screenshot reflects the actual release candidate.
+- [ ] No browser chrome is visible.
+- [ ] No missing/broken assets are visible.
+- [ ] No placeholder or dummy interaction is visible.
+- [ ] All displayed media has appropriate rights/licensing.
+- [ ] Text is readable and contrast has been reviewed.
+- [ ] The screenshot does not imply features or guarantees Marcia does not provide.
 
-**Avoid:**
-- ❌ Lorem ipsum text
-- ❌ Broken images
-- ❌ Browser chrome/toolbars
-- ❌ Personal information
-- ❌ Copyrighted images without permission
-- ❌ Low resolution or pixelated content
-
-### Example Homepage Structure
-
-```
-┌─────────────────────────────────────┐
-│  Logo              Navigation        │ Header
-├─────────────────────────────────────┤
-│                                     │
-│       Hero Section                  │ Hero (hero-gradient)
-│    "Build Something Amazing"        │ - Headline
-│                                     │ - Subheading
-│          [CTA Button]               │ - Call-to-action
-│                                     │
-├─────────────────────────────────────┤
-│                                     │
-│  Features (3 columns with icons)    │ Features (features-cards)
-│   ⚡Lightning    🎨Design    🛡️Secure│
-│                                     │
-├─────────────────────────────────────┤
-│                                     │
-│     Testimonials (3 cards)          │ Testimonials
-│   "Great theme!" - John Doe         │ (testimonials-grid)
-│                                     │
-└─────────────────────────────────────┘
-```
-
-## Tools for Screenshot Creation
-
-### Image Editors
-- **Photoshop** (Adobe)
-- **GIMP** (Free, open-source)
-- **Figma** (Free for individuals)
-- **Canva** (Free tier available)
-- **Affinity Photo**
-
-### Screenshot Tools
-- **Firefox**: Built-in screenshot tool
-- **Chrome**: DevTools screenshot
-- **Nimbus Screenshot** (Browser extension)
-- **Awesome Screenshot** (Browser extension)
-- **Full Page Screen Capture** (Chrome extension)
-
-### Optimization Tools
-- **TinyPNG** - https://tinypng.com/
-- **ImageOptim** (Mac) - Free
-- **Squoosh** - https://squoosh.app/
-- **SVGO** (for SVG)
-
-## Checklist
-
-Before finalizing screenshot:
-
-- [ ] Dimensions are exactly 1200 x 900 pixels
-- [ ] File format is PNG
-- [ ] File named `screenshot.png`
-- [ ] Located in theme root directory
-- [ ] File size < 500KB
-- [ ] No browser UI visible
-- [ ] All images loaded and displaying
-- [ ] Text is readable and professional
-- [ ] Colors represent theme accurately
-- [ ] Layout is responsive-looking
-- [ ] No Lorem ipsum or placeholder text
-- [ ] All fonts loaded correctly
-- [ ] No broken elements
-- [ ] Represents homepage/front page
-- [ ] Shows best theme features
-
-## Style Variation Screenshots
-
-While only one screenshot.png is required for WordPress.org, you may want to create additional screenshots for documentation:
-
-```
-screenshots/
-├── screenshot-minimal.png       # Minimal variation
-├── screenshot-bold.png          # Bold variation
-├── screenshot-luxury.png        # Luxury variation
-├── screenshot-editorial.png     # Editorial variation
-├── screenshot-tech.png          # Tech variation
-└── screenshot-dark.png          # Dark variation
-```
-
-These can be used in:
-- Theme documentation
-- Marketing materials
-- WordPress.org theme preview
-- GitHub README
-
-## WordPress.org Preview Images
-
-WordPress.org also accepts additional preview images:
-
-- Create 4-8 additional screenshots
-- Show different pages/features:
-  - Blog layout
-  - Shop page (WooCommerce)
-  - Pattern library showcase
-  - Mobile view
-  - Single post
-  - Style variations
-- Name them: `screenshot-1.png`, `screenshot-2.png`, etc.
-- Same dimensions: 1200 x 900 pixels
-
-## Sample Content
-
-Use high-quality, license-free images:
-
-### Image Resources
-- **Unsplash** - https://unsplash.com/ (Free)
-- **Pexels** - https://pexels.com/ (Free)
-- **Pixabay** - https://pixabay.com/ (Free)
-- **Burst by Shopify** - https://burst.shopify.com/ (Free)
-
-### Text Content
-- Use real, professional copy (not Lorem ipsum)
-- Keep it concise and compelling
-- Showcase theme typography
-- Use action-oriented language
-
-## Quality Standards
-
-### Resolution
-- Minimum: 1200 x 900 pixels
-- Recommended: Use retina quality source (2400 x 1800) then downscale
-- Sharp, not blurry
-- No pixelation
-
-### Composition
-- Balanced layout
-- Good use of white space
-- Clear focal points
-- Professional appearance
-
-### Color
-- Accurate theme colors
-- Good contrast
-- Cohesive color scheme
-- Brand consistent
-
-## Validation
-
-Before submission, validate screenshot:
-
-```bash
-# Check dimensions (Mac/Linux)
-sips -g pixelWidth -g pixelHeight screenshot.png
-
-# Check file size
-ls -lh screenshot.png
-
-# Expected output:
-# pixelWidth: 1200
-# pixelHeight: 900
-# Size: < 500KB
-```
-
-## Notes
-
-- Screenshot is the first impression of your theme
-- Take time to make it professional and compelling
-- Test different homepage layouts
-- Get feedback before finalizing
-- Update screenshot when theme design changes significantly
-
-## Resources
-
-- [WordPress Theme Handbook - Screenshots](https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/#screenshots)
-- [Theme Review Requirements](https://make.wordpress.org/themes/handbook/review/required/)
-- [Best Practices for Theme Screenshots](https://make.wordpress.org/themes/handbook/review/screenshots/)
-
----
-
-**Current Status**: Screenshot placeholder documentation created.
-
-**Action Required**: Create actual screenshot.png file (1200 x 900 pixels) showing theme homepage.
-
-**Recommended Tool**: Use browser developer tools or Full Page Screen Capture extension to capture demo homepage, then crop/resize to 1200x900px using image editor.
+The exact candidate SHA used to produce the screenshot should be recorded with the other release evidence.

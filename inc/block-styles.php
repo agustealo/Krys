@@ -1,11 +1,9 @@
 <?php
 /**
- * Block Styles
- *
- * Custom block style CSS and configuration.
+ * Block style registration and presentation assets.
  *
  * @package Marcia
- * @since 2.0.0
+ * @since 2.1.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,93 +11,63 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Enqueue block-specific styles.
- *
- * @since 2.0.0
+ * Register named block styles and their block-scoped stylesheets.
  */
-function marcia_enqueue_block_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
+function marcia_register_block_styles() {
+	$styles = array(
+		'core/button' => array(
+			array( 'name' => 'marcia-outline', 'label' => __( 'Outline', 'marcia' ) ),
+			array( 'name' => 'marcia-ghost', 'label' => __( 'Ghost', 'marcia' ) ),
+		),
+		'core/list' => array(
+			array( 'name' => 'marcia-checkmarks', 'label' => __( 'Checkmarks', 'marcia' ) ),
+		),
+		'core/group' => array(
+			array( 'name' => 'marcia-card', 'label' => __( 'Card', 'marcia' ) ),
+			array( 'name' => 'marcia-shadow', 'label' => __( 'Shadow', 'marcia' ) ),
+		),
+	);
 
-	// Custom button styles.
+	foreach ( $styles as $block_name => $block_styles ) {
+		foreach ( $block_styles as $style ) {
+			register_block_style( $block_name, $style );
+		}
+	}
+
+	$version = wp_get_theme()->get( 'Version' );
+
 	wp_enqueue_block_style(
 		'core/button',
 		array(
-			'handle' => 'marcia-button-styles',
+			'handle' => 'marcia-button',
 			'src'    => get_theme_file_uri( 'assets/css/blocks/core-button.css' ),
-			'ver'    => $theme_version,
 			'path'   => get_theme_file_path( 'assets/css/blocks/core-button.css' ),
+			'ver'    => $version,
 		)
 	);
 
-	// Custom navigation styles.
 	wp_enqueue_block_style(
 		'core/navigation',
 		array(
-			'handle' => 'marcia-navigation-styles',
+			'handle' => 'marcia-navigation',
 			'src'    => get_theme_file_uri( 'assets/css/blocks/core-navigation.css' ),
-			'ver'    => $theme_version,
 			'path'   => get_theme_file_path( 'assets/css/blocks/core-navigation.css' ),
+			'ver'    => $version,
 		)
 	);
 }
-add_action( 'init', 'marcia_enqueue_block_styles' );
+add_action( 'init', 'marcia_register_block_styles' );
 
 /**
- * Add inline styles for custom block variations.
- *
- * @since 2.0.0
+ * Shared styles for Marcia list/group variations.
  */
-function marcia_custom_block_styles() {
-	$custom_css = '
-		/* Button - Outline Style */
-		.is-style-marcia-outline {
-			background-color: transparent !important;
-			border: 2px solid currentColor;
-			color: var(--wp--preset--color--primary) !important;
-		}
-		.is-style-marcia-outline:hover {
-			background-color: var(--wp--preset--color--primary) !important;
-			color: var(--wp--preset--color--base) !important;
-		}
-
-		/* Button - Ghost Style */
-		.is-style-marcia-ghost {
-			background-color: transparent !important;
-			border: none;
-			color: var(--wp--preset--color--primary) !important;
-			text-decoration: underline;
-		}
-		.is-style-marcia-ghost:hover {
-			color: var(--wp--preset--color--secondary) !important;
-		}
-
-		/* List - Checkmarks */
-		.is-style-marcia-checkmarks {
-			list-style: none;
-		}
-		.is-style-marcia-checkmarks li::before {
-			content: "✓";
-			color: var(--wp--preset--color--success);
-			font-weight: bold;
-			margin-right: 0.5rem;
-		}
-
-		/* Group - Card */
-		.is-style-marcia-card {
-			border: 1px solid var(--wp--preset--color--gray-200);
-			border-radius: 0.5rem;
-			padding: var(--wp--preset--spacing--50);
-		}
-
-		/* Group - Shadow */
-		.is-style-marcia-shadow {
-			box-shadow: var(--wp--preset--shadow--natural);
-			border-radius: 0.5rem;
-			padding: var(--wp--preset--spacing--50);
-		}
-	';
-
-	wp_add_inline_style( 'wp-block-library', $custom_css );
+function marcia_enqueue_variation_styles() {
+	wp_enqueue_style(
+		'marcia-block-styles',
+		get_theme_file_uri( 'assets/css/block-styles.css' ),
+		array(),
+		wp_get_theme()->get( 'Version' )
+	);
 }
-add_action( 'wp_enqueue_scripts', 'marcia_custom_block_styles' );
-add_action( 'enqueue_block_editor_assets', 'marcia_custom_block_styles' );
+add_action( 'wp_enqueue_scripts', 'marcia_enqueue_variation_styles' );
+add_action( 'enqueue_block_editor_assets', 'marcia_enqueue_variation_styles' );

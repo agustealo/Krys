@@ -1,112 +1,30 @@
 # Changelog
 
-All notable changes to the Marcia theme will be documented in this file.
+## 2.1.0 - Unreleased
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+### Runtime authority
+- Replaced the manual pattern-file loader with WordPress core nested pattern discovery and raised the minimum WordPress version to 6.8.
+- Removed the theme-level performance module that modified cache headers, XML-RPC, embeds, revisions, autosave, memory, heartbeat, output compression, global styles, queries and WooCommerce runtime assets.
+- Removed the experimental editor settings shim and made `theme.json` the design-system authority.
+- Consolidated block-style registration and stylesheet loading.
 
-## [Unreleased]
+### Consumer defaults
+- Removed the theme marketing front-page override so customer content/settings determine the homepage.
+- Removed placeholder social URLs and theme-owned copyright identity from the default footer.
+- Replaced the missing Radnika dependency with an explicit system-font stack.
+- Added missing `xxx-large` typography and `large` shadow tokens used by retained patterns.
+- Pruned confirmed patterns that depended on missing images/video, remote placeholder media, or fake form/newsletter behavior.
 
-### Added
-- Initial theme foundation
-- Complete directory structure
-- Comprehensive theme.json design system
-- Build scripts and development workflow
-- Essential HTML templates (index, front-page, single, page, archive, search, 404, blank, home)
-- Template parts (header, footer)
-- Initial block patterns (hero, features, CTA, hidden patterns)
-- Inc/ PHP files for theme functionality
-- WooCommerce integration setup
-- Performance optimizations
-- Accessibility features
-- Configuration files (.editorconfig, .gitignore, .gitattributes)
+### WooCommerce
+- Moved product templates to the block-theme `/templates` authority.
+- Replaced hard-coded Cart and Checkout functional templates with `woocommerce/page-content-wrapper` + `core/post-content` page templates.
+- Removed classic-menu cart injection, unauthenticated cart-count AJAX, WooCommerce wrapper replacement and WooCommerce asset dequeues.
 
-## [2.0.0] - TBD
+### Release engineering
+- Replaced fake-green test scripts with deterministic source validation.
+- Added WordPress 7.1.1 and WooCommerce activation smoke CI.
+- Added validated runtime-only ZIP packaging.
+- Rewrote release documentation to separate executable evidence from manual gates.
 
-### Added
-- Complete theme rewrite for 2025 standards
-- 100% Full Site Editing (FSE) support
-- Comprehensive design system via theme.json v3
-- 50+ block patterns across multiple categories
-- 6 style variations (Minimal, Bold, Luxury, Editorial, Tech, Dark)
-- WooCommerce block-based templates
-- Variable font implementation (Radnika Variable)
-- Performance-first architecture
-- WCAG 2.2 AA accessibility compliance
-- Mobile-first responsive design
-- Custom block styles
-- Pattern categories system
-- Editor configuration
-- Security enhancements
-
-### Changed
-- Complete architectural rewrite from scratch
-- Modern WordPress 6.6+ compatibility
-- PHP 8.0+ requirement
-- Updated coding standards
-- Improved performance optimization
-
-### Removed
-- All legacy code from previous versions
-- jQuery dependency
-- Classic theme support
-- Backward compatibility with old Marcia versions
-
----
-
-## Version History
-
-### Version 2.0.0 - Complete Rebuild
-This is a complete rewrite of the Marcia theme, built from the ground up using 2025 WordPress standards. It is not backward compatible with previous versions.
-
-**Key Features:**
-- Full Site Editing (Block Theme)
-- Modern design system
-- Premium quality patterns
-- WooCommerce integration
-- Performance optimized
-- Accessibility compliant
-
----
-
-## Development Notes
-
-### Version Numbering
-We follow [Semantic Versioning](https://semver.org/):
-- **MAJOR** version for incompatible API changes
-- **MINOR** version for new functionality in a backward compatible manner
-- **PATCH** version for backward compatible bug fixes
-
-### Release Process
-1. Update version in `style.css`
-2. Update version in `package.json`
-3. Update CHANGELOG.md
-4. Create git tag
-5. Build release package
-6. Submit to WordPress.org
-
----
-
-## Support
-
-For support, please visit:
-- [WordPress.org Support Forum](https://wordpress.org/support/theme/marcia)
-- [GitHub Issues](https://github.com/Zeus-Eternal/Krys/issues)
-
----
-
-## Credits
-
-Marcia Theme is developed and maintained by the Marcia Theme team.
-
-### Contributors
-- Theme architecture and development
-- Pattern design
-- Performance optimization
-- Accessibility testing
-- Documentation
-
----
-
-[Unreleased]: https://github.com/Zeus-Eternal/Krys/compare/v2.0.0...HEAD
-[2.0.0]: https://github.com/Zeus-Eternal/Krys/releases/tag/v2.0.0
+## 2.0.0 - Imported baseline
+- Imported the pre-hardening Marcia block-theme baseline into `agustealo/Krys`.
