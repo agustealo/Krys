@@ -2,6 +2,22 @@
 
 Marcia treats WooCommerce as the authority for commerce behavior. The theme provides presentation support, product templates, and additive styling without replacing cart sessions, checkout logic, scripts, wrappers, business policy, or merchant configuration.
 
+## Runtime views
+
+### Product archive
+
+![Marcia WooCommerce shop running with real products](images/marcia-shop-desktop.png)
+
+### Cart session
+
+![Marcia WooCommerce cart after adding a real product](images/marcia-cart-desktop.png)
+
+### Checkout
+
+![Marcia WooCommerce checkout using the assigned checkout page](images/marcia-checkout-desktop.png)
+
+The documentation capture fixture creates real WooCommerce products and a real browser cart session inside a disposable CI installation. None of that fixture data ships with the theme. See [the runtime showcase](SHOWCASE.md) for provenance and reproduction details.
+
 ## Requirements
 
 - WordPress 6.8 or newer
