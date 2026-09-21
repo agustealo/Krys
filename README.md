@@ -1,4 +1,4 @@
-# Marcia Theme 2025
+# Marcia Theme 2026
 
 A next-generation WordPress block theme built for performance, flexibility, and modern web standards.
 
