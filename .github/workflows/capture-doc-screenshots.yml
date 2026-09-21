@@ -3,7 +3,7 @@ name: Capture documentation screenshots
 on:
   push:
     branches:
-      - docs/runtime-screenshots
+      - 'docs/**'
     paths:
       - '.github/workflows/capture-doc-screenshots.yml'
       - 'tools/setup-screenshot-demo.php'
@@ -79,6 +79,8 @@ jobs:
       - name: Capture real runtime screens
         env:
           BASE_URL: http://127.0.0.1:8080
+          WP_ADMIN_USER: admin
+          WP_ADMIN_PASSWORD: docs-capture-only
         run: |
           rm -rf docs/images
           mkdir -p docs/images
