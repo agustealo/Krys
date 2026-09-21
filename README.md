@@ -16,7 +16,23 @@ These images are captured from a real temporary WordPress 7.1.1 + WooCommerce ru
 | --- | --- |
 | ![Marcia real WooCommerce add-to-cart action](docs/images/marcia-add-to-cart-desktop.png) | ![Marcia homepage mobile](docs/images/marcia-home-mobile.png) |
 
-See [the runtime showcase](docs/SHOWCASE.md) for capture provenance and reproduction details.
+## Native WordPress editing
+
+Marcia does not bolt a proprietary theme dashboard onto WordPress. Its administration surface is the native Site Editor and block editor, with design controls coming from `theme.json`, bundled style variations, templates, and registered patterns.
+
+| Site Editor | Global Styles |
+| --- | --- |
+| ![Marcia in the WordPress Site Editor](docs/images/marcia-admin-site-editor.png) | ![Marcia Global Styles controls](docs/images/marcia-admin-styles.png) |
+
+| Style variations | Template library |
+| --- | --- |
+| ![Marcia bundled style variations](docs/images/marcia-admin-style-variations.png) | ![Marcia WordPress and WooCommerce templates](docs/images/marcia-admin-templates.png) |
+
+| Theme patterns | Page editing |
+| --- | --- |
+| ![Marcia Hero Sections pattern category](docs/images/marcia-admin-patterns.png) | ![Editing the Marcia homepage in the WordPress block editor](docs/images/marcia-admin-page-editor.png) |
+
+See [the runtime showcase](docs/SHOWCASE.md) for capture provenance, larger views, and reproduction details.
 
 ## Requirements
 
